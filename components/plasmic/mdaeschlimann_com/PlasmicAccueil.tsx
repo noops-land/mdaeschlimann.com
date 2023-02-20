@@ -71,7 +71,6 @@ export type PlasmicAccueil__OverridesType = {
   img?: p.Flex<typeof p.PlasmicImg>;
   h2?: p.Flex<"h2">;
   form?: p.Flex<typeof Form>;
-  h5?: p.Flex<"h5">;
   ul?: p.Flex<"ul">;
 };
 
@@ -300,13 +299,24 @@ function PlasmicAccueil__RenderFunc(props: {
                 </React.Fragment>
               </div>
             ) : null}
-            {(hasVariant($state, "merci", "merci") ? true : true) ? (
+            {(
+              hasVariant($state, "mentions", "mentions")
+                ? false
+                : hasVariant($state, "merci", "merci")
+                ? true
+                : true
+            ) ? (
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
                   sty.text__lbqf0,
                   {
+                    [sty.textmentions__lbqf0NW20P]: hasVariant(
+                      $state,
+                      "mentions",
+                      "mentions"
+                    ),
                     [sty.textmerci__lbqf0NshOl]: hasVariant(
                       $state,
                       "merci",
@@ -417,27 +427,10 @@ function PlasmicAccueil__RenderFunc(props: {
                         projectcss.all,
                         projectcss.h6,
                         projectcss.__wab_text,
-                        sty.h6__jsnM7
+                        sty.h6__utneb
                       )}
                     >
-                      <React.Fragment>
-                        <React.Fragment>{""}</React.Fragment>
-                        {
-                          <h5
-                            data-plasmic-name={"h5"}
-                            data-plasmic-override={overrides.h5}
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.h5,
-                              projectcss.__wab_text,
-                              sty.h5
-                            )}
-                          >
-                            {"Hébergement"}
-                          </h5>
-                        }
-                        <React.Fragment>{""}</React.Fragment>
-                      </React.Fragment>
+                      {"Hébergement"}
                     </h6>
                   }
                   <React.Fragment>
@@ -653,11 +646,10 @@ function PlasmicAccueil__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "img", "h2", "form", "h5", "ul"],
+  root: ["root", "img", "h2", "form", "ul"],
   img: ["img"],
   h2: ["h2"],
   form: ["form"],
-  h5: ["h5"],
   ul: ["ul"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -668,7 +660,6 @@ type NodeDefaultElementType = {
   img: typeof p.PlasmicImg;
   h2: "h2";
   form: typeof Form;
-  h5: "h5";
   ul: "ul";
 };
 
@@ -736,7 +727,6 @@ export const PlasmicAccueil = Object.assign(
     img: makeNodeComponent("img"),
     h2: makeNodeComponent("h2"),
     form: makeNodeComponent("form"),
-    h5: makeNodeComponent("h5"),
     ul: makeNodeComponent("ul"),
 
     // Metadata about props expected for PlasmicAccueil

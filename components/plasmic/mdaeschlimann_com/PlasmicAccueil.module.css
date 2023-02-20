@@ -113,13 +113,14 @@
 .text__yNrfB {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 800px;
   padding-bottom: 0px;
   padding-left: 25px;
   padding-right: 25px;
   margin-bottom: 20px;
   min-width: 0;
+  min-height: 0;
 }
 .textmentions__yNrfBnW20P {
   display: block;
