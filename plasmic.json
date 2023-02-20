@@ -1,0 +1,206 @@
+{
+  "platform": "nextjs",
+  "code": {
+    "lang": "ts",
+    "scheme": "blackbox",
+    "reactRuntime": "classic"
+  },
+  "style": {
+    "scheme": "css-modules",
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+  },
+  "images": {
+    "scheme": "public-files",
+    "publicDir": "../public",
+    "publicUrlPrefix": "/"
+  },
+  "tokens": {
+    "scheme": "theo",
+    "tokensFilePath": "plasmic-tokens.theo.json"
+  },
+  "srcDir": "components",
+  "defaultPlasmicDir": "./plasmic",
+  "projects": [
+    {
+      "projectId": "p4LaNHsjacaypvn2fBdVp1",
+      "projectApiToken": "qTng4RHHe191PDN3XwK7mmvcoficUNGagZ0leWjrulVFyfYq6bsOtlveYEn3gapK3V57jnagLBVgW2liMXA",
+      "projectName": "mdaeschlimann.com",
+      "version": "latest",
+      "cssFilePath": "plasmic/mdaeschlimann_com/plasmic_mdaeschlimann_com.module.css",
+      "components": [
+        {
+          "id": "SRL_deXEpapHr",
+          "name": "Accueil",
+          "type": "managed",
+          "projectId": "p4LaNHsjacaypvn2fBdVp1",
+          "renderModuleFilePath": "plasmic/mdaeschlimann_com/PlasmicAccueil.tsx",
+          "importSpec": {
+            "modulePath": "../pages/index.tsx"
+          },
+          "cssFilePath": "plasmic/mdaeschlimann_com/PlasmicAccueil.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "JUigd8V3ygI",
+          "name": "TextInput",
+          "type": "managed",
+          "projectId": "p4LaNHsjacaypvn2fBdVp1",
+          "renderModuleFilePath": "plasmic/mdaeschlimann_com/PlasmicTextInput.tsx",
+          "importSpec": {
+            "modulePath": "TextInput.tsx"
+          },
+          "cssFilePath": "plasmic/mdaeschlimann_com/PlasmicTextInput.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "text-input"
+        },
+        {
+          "id": "a1_SE8wfWDQ",
+          "name": "Button",
+          "type": "managed",
+          "projectId": "p4LaNHsjacaypvn2fBdVp1",
+          "renderModuleFilePath": "plasmic/mdaeschlimann_com/PlasmicButton.tsx",
+          "importSpec": {
+            "modulePath": "Button.tsx"
+          },
+          "cssFilePath": "plasmic/mdaeschlimann_com/PlasmicButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
+        },
+        {
+          "id": "W-4lJh8DJRw",
+          "name": "Checkbox",
+          "type": "managed",
+          "projectId": "p4LaNHsjacaypvn2fBdVp1",
+          "renderModuleFilePath": "plasmic/mdaeschlimann_com/PlasmicCheckbox.tsx",
+          "importSpec": {
+            "modulePath": "Checkbox.tsx"
+          },
+          "cssFilePath": "plasmic/mdaeschlimann_com/PlasmicCheckbox.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "checkbox"
+        },
+        {
+          "id": "T0fwWsOABjK",
+          "name": "Form",
+          "type": "managed",
+          "projectId": "p4LaNHsjacaypvn2fBdVp1",
+          "renderModuleFilePath": "plasmic/mdaeschlimann_com/PlasmicForm.tsx",
+          "importSpec": {
+            "modulePath": "Form.tsx"
+          },
+          "cssFilePath": "plasmic/mdaeschlimann_com/PlasmicForm.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        }
+      ],
+      "icons": [
+        {
+          "id": "A2s5Wi2XoXti-v",
+          "name": "PlayingCardHeartShapesvgIcon",
+          "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__PlayingCardHeartShapesvg.tsx"
+        },
+        {
+          "id": "a6P6rGXfRam2Qq",
+          "name": "ChecksvgIcon",
+          "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__Checksvg.tsx"
+        },
+        {
+          "id": "6bUeWVyQ0aveT9",
+          "name": "BlackCommentsBubbleSvgrepoComsvgIcon",
+          "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__BlackCommentsBubbleSvgrepoComsvg.tsx"
+        },
+        {
+          "id": "8Kq5biUcOP2KT1",
+          "name": "SearchsvgIcon",
+          "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__Searchsvg.tsx"
+        },
+        {
+          "id": "3u65MiDiQuQ",
+          "name": "SquaresvgIcon",
+          "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__Squaresvg.tsx"
+        },
+        {
+          "id": "ZIxuNCmCETD",
+          "name": "SquareCheckFilledsvgIcon",
+          "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__SquareCheckFilledsvg.tsx"
+        },
+        {
+          "id": "6GRbdHEHGQC",
+          "name": "SquareMinussvgIcon",
+          "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__SquareMinussvg.tsx"
+        },
+        {
+          "id": "7GBqP4yc8GG",
+          "name": "IconIcon",
+          "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__Icon.tsx"
+        },
+        {
+          "id": "xNSgQQVONs",
+          "name": "TwitterIcon",
+          "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__Twitter.tsx"
+        },
+        {
+          "id": "R0S2wicba9",
+          "name": "LinkedinIcon",
+          "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__Linkedin.tsx"
+        },
+        {
+          "id": "bS4_04WE0n",
+          "name": "FacebookIcon",
+          "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__Facebook.tsx"
+        },
+        {
+          "id": "CLNhNHAXHb",
+          "name": "InstagramIcon",
+          "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__Instagram.tsx"
+        }
+      ],
+      "images": [
+        {
+          "id": "eD1c1Eyb0",
+          "name": "marie-do_aeschlimann_action",
+          "filePath": "../public/plasmic/mdaeschlimann_com/images/marieDoAeschlimannAction.jpeg"
+        },
+        {
+          "id": "7Q3Z0uWVW",
+          "name": "marie-do_aeschlimann",
+          "filePath": "../public/plasmic/mdaeschlimann_com/images/marieDoAeschlimann.jpeg"
+        }
+      ],
+      "indirect": false,
+      "globalContextsFilePath": "",
+      "codeComponents": [
+        {
+          "id": "dEBdYUTP30tYE",
+          "name": "PlasmicHead",
+          "componentImportPath": "@plasmicapp/react-web"
+        },
+        {
+          "id": "BOVMSNlNx0eQD",
+          "name": "Fetcher",
+          "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        }
+      ]
+    }
+  ],
+  "globalVariants": {
+    "variantGroups": [
+      {
+        "id": "8_4TpjeQmcocO",
+        "name": "Screen",
+        "projectId": "p4LaNHsjacaypvn2fBdVp1",
+        "contextFilePath": "plasmic/mdaeschlimann_com/PlasmicGlobalVariant__Screen.tsx"
+      }
+    ]
+  },
+  "wrapPagesWithGlobalContexts": true,
+  "nextjsConfig": {
+    "pagesDir": "../pages"
+  },
+  "cliVersion": "0.1.212",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.212/dist/plasmic.schema.json"
+}
