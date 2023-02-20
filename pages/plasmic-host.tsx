@@ -2,7 +2,10 @@
 import * as React from 'react';
 import Script from 'next/script';
 import { PlasmicCanvasHost, registerComponent } from '@plasmicapp/host';
-import PhoneInput from 'react-phone-number-input'
+import 'react-phone-number-input/style.css'
+import { useState } from 'react';
+import { E164Number } from 'libphonenumber-js/types';
+import PhoneInput from 'react-phone-number-input';
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -11,14 +14,20 @@ import PhoneInput from 'react-phone-number-input'
 // http://localhost:3000/plasmic-host).  See
 // https://docs.plasmic.app/learn/app-hosting/#set-a-plasmic-project-to-use-your-app-host
 
-interface cPhoneInputProps {
-  className?: string
-  placeHolder?: string
+interface CPhoneInputProps {
+      className?: string
+      placeHolder?: string
 }
 
-function cPhoneInput({ className, placeHolder }: cPhoneInputProps) {
-  return <>
-    <style>
+function CPhoneInput({ className, placeHolder }: CPhoneInputProps) {
+      let [value, setValue]: [E164Number | undefined, any] = useState()
+      return <PhoneInput
+            placeHolder={placeHolder}
+            value={value}
+            onChange={setValue}
+            className={className}
+            defaultCountry="FR" />
+      {/* <style>
       :root {`
     {
     --PhoneInput-color--focus: #03b2cb;
@@ -137,23 +146,18 @@ function cPhoneInput({ className, placeHolder }: cPhoneInputProps) {
     min-width: 0;
 }`
       }
-    </style>
-    <PhoneInput
-      placeHolder={placeHolder}
-      onChange={() => { }}
-      className={className}
-      defaultCountry="FR" >
-    </PhoneInput></>
+    </style> */}
+
 }
 
-registerComponent(cPhoneInput, {
-  name: 'PhoneInput',
-  props: {
-    placeHolder: 'string',
-  },
-  importPath: 'react-phone-number-input'
+registerComponent(CPhoneInput, {
+      name: 'PhoneInput',
+      props: {
+            placeHolder: 'string',
+      },
+      importPath: 'react-phone-number-input'
 });
 
 export default function PlasmicHost() {
-  return <PlasmicCanvasHost />;
+      return <PlasmicCanvasHost />;
 }
