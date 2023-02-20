@@ -7,15 +7,15 @@ import { ScreenVariantProvider } from "../components/plasmic/mdaeschlimann_com/P
 import { PlasmicAccueil } from "../components/plasmic/mdaeschlimann_com/PlasmicAccueil";
 import { useRouter } from "next/router";
 
-function MentionsLegales() {
+function Mentions() {
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicAccueil mentionsLegales={true} />
+      <PlasmicAccueil mentions={true} />
     </ph.PageParamsProvider>
   );
 }
 
-export default MentionsLegales;
+export default Mentions;
