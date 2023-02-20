@@ -75,8 +75,8 @@ export type PlasmicForm__OverridesType = {
   ville?: p.Flex<typeof TextInput>;
   freeBox?: p.Flex<"div">;
   startIconContainer?: p.Flex<"div">;
-  endIconContainer?: p.Flex<"div">;
   phoneInput?: p.Flex<typeof PhoneInput>;
+  endIconContainer?: p.Flex<"div">;
   checkbox?: p.Flex<typeof Checkbox>;
   text?: p.Flex<"div">;
   link?: p.Flex<"a"> & Partial<LinkProps>;
@@ -218,6 +218,14 @@ function PlasmicForm__RenderFunc(props: {
               })}
             </div>
           ) : null}
+
+          <PhoneInput
+            data-plasmic-name={"phoneInput"}
+            data-plasmic-override={overrides.phoneInput}
+            className={classNames("__wab_instance", sty.phoneInput)}
+            placeHolder={"Téléphone" as const}
+          />
+
           {true ? (
             <div
               data-plasmic-name={"endIconContainer"}
@@ -236,13 +244,6 @@ function PlasmicForm__RenderFunc(props: {
               })}
             </div>
           ) : null}
-
-          <PhoneInput
-            data-plasmic-name={"phoneInput"}
-            data-plasmic-override={overrides.phoneInput}
-            className={classNames("__wab_instance", sty.phoneInput)}
-            placeHolder={"Téléphone" as const}
-          />
         </div>
 
         <Checkbox
@@ -311,8 +312,8 @@ const PlasmicDescendants = {
     "ville",
     "freeBox",
     "startIconContainer",
-    "endIconContainer",
     "phoneInput",
+    "endIconContainer",
     "checkbox",
     "text",
     "link",
@@ -322,10 +323,10 @@ const PlasmicDescendants = {
   nom: ["nom"],
   email: ["email"],
   ville: ["ville"],
-  freeBox: ["freeBox", "startIconContainer", "endIconContainer", "phoneInput"],
+  freeBox: ["freeBox", "startIconContainer", "phoneInput", "endIconContainer"],
   startIconContainer: ["startIconContainer"],
-  endIconContainer: ["endIconContainer"],
   phoneInput: ["phoneInput"],
+  endIconContainer: ["endIconContainer"],
   checkbox: ["checkbox", "text", "link"],
   text: ["text", "link"],
   link: ["link"],
@@ -342,8 +343,8 @@ type NodeDefaultElementType = {
   ville: typeof TextInput;
   freeBox: "div";
   startIconContainer: "div";
-  endIconContainer: "div";
   phoneInput: typeof PhoneInput;
+  endIconContainer: "div";
   checkbox: typeof Checkbox;
   text: "div";
   link: "a";
@@ -417,8 +418,8 @@ export const PlasmicForm = Object.assign(
     ville: makeNodeComponent("ville"),
     freeBox: makeNodeComponent("freeBox"),
     startIconContainer: makeNodeComponent("startIconContainer"),
-    endIconContainer: makeNodeComponent("endIconContainer"),
     phoneInput: makeNodeComponent("phoneInput"),
+    endIconContainer: makeNodeComponent("endIconContainer"),
     checkbox: makeNodeComponent("checkbox"),
     text: makeNodeComponent("text"),
     link: makeNodeComponent("link"),
