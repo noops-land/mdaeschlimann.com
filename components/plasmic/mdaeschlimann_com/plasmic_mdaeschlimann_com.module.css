@@ -119,6 +119,8 @@
   --mixin-hXW2jk9gsbTI-_font-family: "Rubik", sans-serif;
   --mixin-hXW2jk9gsbTI-_font-weight: 500;
   --mixin-hXW2jk9gsbTI-_font-size: 20px;
+  --mixin-hXW2jk9gsbTI-_margin-bottom: 8px;
+  --mixin-hXW2jk9gsbTI-_margin-top: 16px;
   --mixin-hXW2jk9gsbTI-_white-space: pre-wrap;
   --mixin-aBBqCsNBQqQME_font-family: "Inter", sans-serif;
   --mixin-aBBqCsNBQqQME_color: #000000;
@@ -606,6 +608,8 @@
   font-family: var(--mixin-hXW2jk9gsbTI-_font-family);
   font-weight: var(--mixin-hXW2jk9gsbTI-_font-weight);
   font-size: var(--mixin-hXW2jk9gsbTI-_font-size);
+  margin-bottom: var(--mixin-hXW2jk9gsbTI-_margin-bottom);
+  margin-top: var(--mixin-hXW2jk9gsbTI-_margin-top);
 }
 
 :where(.root_reset .plasmic_default__h5),

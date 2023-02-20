@@ -50,12 +50,17 @@ import LinkedinIcon from "./icons/PlasmicIcon__Linkedin"; // plasmic-import: R0S
 
 export type PlasmicAccueil__VariantMembers = {
   merci: "merci";
+  mentionsLegales: "mentionsLegales";
 };
 export type PlasmicAccueil__VariantsArgs = {
   merci?: SingleBooleanChoiceArg<"merci">;
+  mentionsLegales?: SingleBooleanChoiceArg<"mentionsLegales">;
 };
 type VariantPropType = keyof PlasmicAccueil__VariantsArgs;
-export const PlasmicAccueil__VariantProps = new Array<VariantPropType>("merci");
+export const PlasmicAccueil__VariantProps = new Array<VariantPropType>(
+  "merci",
+  "mentionsLegales"
+);
 
 export type PlasmicAccueil__ArgsType = {};
 type ArgPropType = keyof PlasmicAccueil__ArgsType;
@@ -64,9 +69,10 @@ export const PlasmicAccueil__ArgProps = new Array<ArgPropType>();
 export type PlasmicAccueil__OverridesType = {
   root?: p.Flex<"div">;
   img?: p.Flex<typeof p.PlasmicImg>;
-  h1?: p.Flex<"h1">;
   h2?: p.Flex<"h2">;
   form?: p.Flex<typeof Form>;
+  h5?: p.Flex<"h5">;
+  ul?: p.Flex<"ul">;
 };
 
 export interface DefaultAccueilProps {}
@@ -107,6 +113,14 @@ function PlasmicAccueil__RenderFunc(props: {
         type: "private",
         variableType: "variant",
         initFunc: true ? ($props, $state, $ctx) => $props.merci : undefined
+      },
+      {
+        path: "mentionsLegales",
+        type: "private",
+        variableType: "variant",
+        initFunc: true
+          ? ($props, $state, $ctx) => $props.mentionsLegales
+          : undefined
       }
     ],
     [$props, $ctx]
@@ -183,7 +197,14 @@ function PlasmicAccueil__RenderFunc(props: {
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
             sty.root,
-            { [sty.rootmerci]: hasVariant($state, "merci", "merci") }
+            {
+              [sty.rootmentionsLegales]: hasVariant(
+                $state,
+                "mentionsLegales",
+                "mentionsLegales"
+              ),
+              [sty.rootmerci]: hasVariant($state, "merci", "merci")
+            }
           )}
         >
           <div
@@ -226,6 +247,11 @@ function PlasmicAccueil__RenderFunc(props: {
 
           <div
             className={classNames(projectcss.all, sty.freeBox__wzPnx, {
+              [sty.freeBoxmentionsLegales__wzPnxnW20P]: hasVariant(
+                $state,
+                "mentionsLegales",
+                "mentionsLegales"
+              ),
               [sty.freeBoxmerci__wzPnxNshOl]: hasVariant(
                 $state,
                 "merci",
@@ -233,36 +259,52 @@ function PlasmicAccueil__RenderFunc(props: {
               )
             })}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__oPb7
-              )}
-            >
-              <React.Fragment>
-                <React.Fragment>{""}</React.Fragment>
-                {
-                  <h1
-                    data-plasmic-name={"h1"}
-                    data-plasmic-override={overrides.h1}
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h1,
-                      projectcss.__wab_text,
-                      sty.h1,
-                      { [sty.h1merci]: hasVariant($state, "merci", "merci") }
-                    )}
-                  >
-                    {hasVariant($state, "merci", "merci")
-                      ? "Merci !"
-                      : "Inscrivez-vous à ma newsletter\npour rester informé(e) :"}
-                  </h1>
-                }
-                <React.Fragment>{""}</React.Fragment>
-              </React.Fragment>
-            </div>
-
+            {(
+              hasVariant($state, "mentionsLegales", "mentionsLegales")
+                ? false
+                : true
+            ) ? (
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__oPb7,
+                  {
+                    [sty.textmentionsLegales__oPb7NW20P]: hasVariant(
+                      $state,
+                      "mentionsLegales",
+                      "mentionsLegales"
+                    )
+                  }
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <h1
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h1,
+                        projectcss.__wab_text,
+                        sty.h1__nwUqy,
+                        {
+                          [sty.h1merci__nwUqynshOl]: hasVariant(
+                            $state,
+                            "merci",
+                            "merci"
+                          )
+                        }
+                      )}
+                    >
+                      {hasVariant($state, "merci", "merci")
+                        ? "Merci !"
+                        : "Inscrivez-vous à ma newsletter\npour rester informé(e) :"}
+                    </h1>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              </div>
+            ) : null}
             {(hasVariant($state, "merci", "merci") ? true : true) ? (
               <div
                 className={classNames(
@@ -301,14 +343,219 @@ function PlasmicAccueil__RenderFunc(props: {
                 </React.Fragment>
               </div>
             ) : null}
-            {(hasVariant($state, "merci", "merci") ? false : true) ? (
+            {(
+              hasVariant($state, "mentionsLegales", "mentionsLegales")
+                ? false
+                : hasVariant($state, "merci", "merci")
+                ? false
+                : true
+            ) ? (
               <Form
                 data-plasmic-name={"form"}
                 data-plasmic-override={overrides.form}
                 className={classNames("__wab_instance", sty.form, {
+                  [sty.formmentionsLegales]: hasVariant(
+                    $state,
+                    "mentionsLegales",
+                    "mentionsLegales"
+                  ),
                   [sty.formmerci]: hasVariant($state, "merci", "merci")
                 })}
               />
+            ) : null}
+            {(
+              hasVariant($state, "mentionsLegales", "mentionsLegales")
+                ? true
+                : true
+            ) ? (
+              <h1
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h1,
+                  projectcss.__wab_text,
+                  sty.h1__vJ2Kc,
+                  {
+                    [sty.h1mentionsLegales__vJ2KcnW20P]: hasVariant(
+                      $state,
+                      "mentionsLegales",
+                      "mentionsLegales"
+                    )
+                  }
+                )}
+              >
+                {"Mentions légales"}
+              </h1>
+            ) : null}
+            {(
+              hasVariant($state, "mentionsLegales", "mentionsLegales")
+                ? true
+                : true
+            ) ? (
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__yNrfB,
+                  {
+                    [sty.textmentionsLegales__yNrfBnW20P]: hasVariant(
+                      $state,
+                      "mentionsLegales",
+                      "mentionsLegales"
+                    )
+                  }
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <h6
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h6,
+                        projectcss.__wab_text,
+                        sty.h6__d2Okt
+                      )}
+                    >
+                      {"Directeur de la publication"}
+                    </h6>
+                  }
+                  <React.Fragment>
+                    {
+                      "Marie-Do Aeschlimann\n© Marie-Do Aeschlimann 2023. Tous droits d’auteur réservés.\n"
+                    }
+                  </React.Fragment>
+                  {
+                    <h6
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h6,
+                        projectcss.__wab_text,
+                        sty.h6__jsnM7
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>{""}</React.Fragment>
+                        {
+                          <h5
+                            data-plasmic-name={"h5"}
+                            data-plasmic-override={overrides.h5}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.h5,
+                              projectcss.__wab_text,
+                              sty.h5
+                            )}
+                          >
+                            {"Hébergement"}
+                          </h5>
+                        }
+                        <React.Fragment>{""}</React.Fragment>
+                      </React.Fragment>
+                    </h6>
+                  }
+                  <React.Fragment>
+                    {
+                      "OVH\n2 rue Kellermann 59100 Roubaix – France\nwww.ovh.com\nTél : 0899 701 761\n(1,349 € ttc / appel puis 0,337 € ttc / min)\n"
+                    }
+                  </React.Fragment>
+                  {
+                    <h6
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h6,
+                        projectcss.__wab_text,
+                        sty.h6__g887X
+                      )}
+                    >
+                      {"Données personnelles "}
+                    </h6>
+                  }
+                  <React.Fragment>
+                    {
+                      "Les données personnelles collectées ont pour finalité :\n\n"
+                    }
+                  </React.Fragment>
+                  {
+                    <ul
+                      data-plasmic-name={"ul"}
+                      data-plasmic-override={overrides.ul}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.ul,
+                        sty.ul
+                      )}
+                    >
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li__jheyx
+                        )}
+                      >
+                        {
+                          "de permettre aux visiteurs d’envoyer une correspondance à Mme Marie-Do Aeschlimann via le formulaire de contact. Dans ce cas les données sont conservées dans la limite fixée par la législation et -au plus- celle des mandats électifs de Mme Marie-Do Aeschlimann."
+                        }
+                      </li>
+
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li___0Zh58
+                        )}
+                      >
+                        {
+                          "de permettre aux visiteurs de s’abonner à la newsletter de Mme Marie-Do Aeschlimann. Dans ce cas, les données sont conservées dans la limite de la demande de retrait (opt out) que ferait la personne abonnée."
+                        }
+                      </li>
+                    </ul>
+                  }
+                  <React.Fragment>
+                    {
+                      "\nCe site web n’utilise pas de cookies collectant des données personnelles.\n"
+                    }
+                  </React.Fragment>
+                  {
+                    <h6
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h6,
+                        projectcss.__wab_text,
+                        sty.h6__esUxD
+                      )}
+                    >
+                      {"Respect des données personnelles"}
+                    </h6>
+                  }
+                  <React.Fragment>
+                    {
+                      "En vertu de la loi n° 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés (dite \"loi CNIL\"), vos coordonnées ne seront en aucun cas utilisées à d'autres fins ou divulguées à un tiers à l’exception des co-contractants de Mme Marie-Do Aeschlimann qui n’agiront que sur instruction et contrôle de celle-ci et qui seront soumis à une stricte obligation de confidentialité.\n\nConformément à l'article 38 de la loi CNIL, vous pouvez vous opposer à ce que vos données à caractère personnel fassent l'objet d'un traitement. Pour ce faire, il vous suffit de vous désabonner à la newsletter de Mme Marie-Do Aeschlimann en cliquant sur \"se désinscrire\". Vous serez alors immédiatement désinscrit de la liste de diffusion et vos coordonnées seront définitivement effacées de notre traitement.\n\nConformément aux articles 39 et 40 de la loi CNIL, vous disposez à tout moment d'un droit d'information, d'accès, de modification, de rectification et de suppression des données qui vous concernent. Pour l'exercer, il vous suffit d'adresser un message à contact@mdaeschlimann.com.\n\nNous utilisons Sendinblue en tant que plateforme marketing. En soumettant le formulaire d'inscription à la newsletter de Marie-Do Aeschlmann, vous reconnaissez que les informations que vous allez fournir seront transmises à Sendinblue en sa qualité de processeur de données; et ce conformément à "
+                    }
+                  </React.Fragment>
+                  {
+                    <p.PlasmicLink
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__qm4V
+                      )}
+                      component={Link}
+                      href={
+                        "https://fr.sendinblue.com/legal/termsofuse/" as const
+                      }
+                      platform={"nextjs"}
+                      target={"_blank" as const}
+                    >
+                      {"ses conditions générales d'utilisation"}
+                    </p.PlasmicLink>
+                  }
+                  <React.Fragment>{"."}</React.Fragment>
+                </React.Fragment>
+              </div>
             ) : null}
           </div>
 
@@ -414,11 +661,12 @@ function PlasmicAccueil__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "img", "h1", "h2", "form"],
+  root: ["root", "img", "h2", "form", "h5", "ul"],
   img: ["img"],
-  h1: ["h1"],
   h2: ["h2"],
-  form: ["form"]
+  form: ["form"],
+  h5: ["h5"],
+  ul: ["ul"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -426,9 +674,10 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   img: typeof p.PlasmicImg;
-  h1: "h1";
   h2: "h2";
   form: typeof Form;
+  h5: "h5";
+  ul: "ul";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -493,9 +742,10 @@ export const PlasmicAccueil = Object.assign(
   {
     // Helper components rendering sub-elements
     img: makeNodeComponent("img"),
-    h1: makeNodeComponent("h1"),
     h2: makeNodeComponent("h2"),
     form: makeNodeComponent("form"),
+    h5: makeNodeComponent("h5"),
+    ul: makeNodeComponent("ul"),
 
     // Metadata about props expected for PlasmicAccueil
     internalVariantProps: PlasmicAccueil__VariantProps,

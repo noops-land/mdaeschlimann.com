@@ -69,6 +69,7 @@ export type PlasmicForm__OverridesType = {
   telephone?: p.Flex<typeof TextInput>;
   checkbox?: p.Flex<typeof Checkbox>;
   text?: p.Flex<"div">;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
   button?: p.Flex<typeof Button>;
 };
 
@@ -210,35 +211,19 @@ function PlasmicForm__RenderFunc(props: {
             <React.Fragment>
               <React.Fragment>
                 {
-                  "J'accepte de recevoir votre newsletter et confirme avoir pris connaissance de votre "
+                  "J'accepte de recevoir votre newsletter et confirme avoir pris connaissance de vos "
                 }
               </React.Fragment>
               {
                 <p.PlasmicLink
+                  data-plasmic-name={"link"}
+                  data-plasmic-override={overrides.link}
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
                     projectcss.__wab_text,
                     projectcss.plasmic_default__inline,
-                    sty.link__zzpz
-                  )}
-                  component={Link}
-                  href={"/politique-de-confidentialite" as const}
-                  platform={"nextjs"}
-                  target={"_blank" as const}
-                >
-                  {"politique de confidentialité "}
-                </p.PlasmicLink>
-              }
-              <React.Fragment>{"et de vos "}</React.Fragment>
-              {
-                <p.PlasmicLink
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    projectcss.plasmic_default__inline,
-                    sty.link__gW7Bj
+                    sty.link
                   )}
                   component={Link}
                   href={"/mentions-legales" as const}
@@ -275,6 +260,7 @@ const PlasmicDescendants = {
     "telephone",
     "checkbox",
     "text",
+    "link",
     "button"
   ],
   prenom: ["prenom"],
@@ -282,8 +268,9 @@ const PlasmicDescendants = {
   email: ["email"],
   ville: ["ville"],
   telephone: ["telephone"],
-  checkbox: ["checkbox", "text"],
-  text: ["text"],
+  checkbox: ["checkbox", "text", "link"],
+  text: ["text", "link"],
+  link: ["link"],
   button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -298,6 +285,7 @@ type NodeDefaultElementType = {
   telephone: typeof TextInput;
   checkbox: typeof Checkbox;
   text: "div";
+  link: "a";
   button: typeof Button;
 };
 
@@ -369,6 +357,7 @@ export const PlasmicForm = Object.assign(
     telephone: makeNodeComponent("telephone"),
     checkbox: makeNodeComponent("checkbox"),
     text: makeNodeComponent("text"),
+    link: makeNodeComponent("link"),
     button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicForm
