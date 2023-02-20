@@ -561,6 +561,11 @@ function PlasmicAccueil__RenderFunc(props: {
 
           <div
             className={classNames(projectcss.all, sty.freeBox___2Zx4T, {
+              [sty.freeBoxmentionsLegales___2Zx4TnW20P]: hasVariant(
+                $state,
+                "mentionsLegales",
+                "mentionsLegales"
+              ),
               [sty.freeBoxmerci___2Zx4TNshOl]: hasVariant(
                 $state,
                 "merci",
