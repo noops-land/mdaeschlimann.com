@@ -50,16 +50,16 @@ import LinkedinIcon from "./icons/PlasmicIcon__Linkedin"; // plasmic-import: R0S
 
 export type PlasmicAccueil__VariantMembers = {
   merci: "merci";
-  mentionsLegales: "mentionsLegales";
+  mentions: "mentions";
 };
 export type PlasmicAccueil__VariantsArgs = {
   merci?: SingleBooleanChoiceArg<"merci">;
-  mentionsLegales?: SingleBooleanChoiceArg<"mentionsLegales">;
+  mentions?: SingleBooleanChoiceArg<"mentions">;
 };
 type VariantPropType = keyof PlasmicAccueil__VariantsArgs;
 export const PlasmicAccueil__VariantProps = new Array<VariantPropType>(
   "merci",
-  "mentionsLegales"
+  "mentions"
 );
 
 export type PlasmicAccueil__ArgsType = {};
@@ -115,12 +115,10 @@ function PlasmicAccueil__RenderFunc(props: {
         initFunc: true ? ($props, $state, $ctx) => $props.merci : undefined
       },
       {
-        path: "mentionsLegales",
+        path: "mentions",
         type: "private",
         variableType: "variant",
-        initFunc: true
-          ? ($props, $state, $ctx) => $props.mentionsLegales
-          : undefined
+        initFunc: true ? ($props, $state, $ctx) => $props.mentions : undefined
       }
     ],
     [$props, $ctx]
@@ -198,11 +196,7 @@ function PlasmicAccueil__RenderFunc(props: {
             projectcss.plasmic_tokens,
             sty.root,
             {
-              [sty.rootmentionsLegales]: hasVariant(
-                $state,
-                "mentionsLegales",
-                "mentionsLegales"
-              ),
+              [sty.rootmentions]: hasVariant($state, "mentions", "mentions"),
               [sty.rootmerci]: hasVariant($state, "merci", "merci")
             }
           )}
@@ -247,10 +241,10 @@ function PlasmicAccueil__RenderFunc(props: {
 
           <div
             className={classNames(projectcss.all, sty.freeBox__wzPnx, {
-              [sty.freeBoxmentionsLegales__wzPnxnW20P]: hasVariant(
+              [sty.freeBoxmentions__wzPnxnW20P]: hasVariant(
                 $state,
-                "mentionsLegales",
-                "mentionsLegales"
+                "mentions",
+                "mentions"
               ),
               [sty.freeBoxmerci__wzPnxNshOl]: hasVariant(
                 $state,
@@ -259,21 +253,17 @@ function PlasmicAccueil__RenderFunc(props: {
               )
             })}
           >
-            {(
-              hasVariant($state, "mentionsLegales", "mentionsLegales")
-                ? false
-                : true
-            ) ? (
+            {(hasVariant($state, "mentions", "mentions") ? false : true) ? (
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
                   sty.text__oPb7,
                   {
-                    [sty.textmentionsLegales__oPb7NW20P]: hasVariant(
+                    [sty.textmentions__oPb7NW20P]: hasVariant(
                       $state,
-                      "mentionsLegales",
-                      "mentionsLegales"
+                      "mentions",
+                      "mentions"
                     )
                   }
                 )}
@@ -344,7 +334,7 @@ function PlasmicAccueil__RenderFunc(props: {
               </div>
             ) : null}
             {(
-              hasVariant($state, "mentionsLegales", "mentionsLegales")
+              hasVariant($state, "mentions", "mentions")
                 ? false
                 : hasVariant($state, "merci", "merci")
                 ? false
@@ -354,20 +344,16 @@ function PlasmicAccueil__RenderFunc(props: {
                 data-plasmic-name={"form"}
                 data-plasmic-override={overrides.form}
                 className={classNames("__wab_instance", sty.form, {
-                  [sty.formmentionsLegales]: hasVariant(
+                  [sty.formmentions]: hasVariant(
                     $state,
-                    "mentionsLegales",
-                    "mentionsLegales"
+                    "mentions",
+                    "mentions"
                   ),
                   [sty.formmerci]: hasVariant($state, "merci", "merci")
                 })}
               />
             ) : null}
-            {(
-              hasVariant($state, "mentionsLegales", "mentionsLegales")
-                ? true
-                : true
-            ) ? (
+            {(hasVariant($state, "mentions", "mentions") ? true : true) ? (
               <h1
                 className={classNames(
                   projectcss.all,
@@ -375,10 +361,10 @@ function PlasmicAccueil__RenderFunc(props: {
                   projectcss.__wab_text,
                   sty.h1__vJ2Kc,
                   {
-                    [sty.h1mentionsLegales__vJ2KcnW20P]: hasVariant(
+                    [sty.h1mentions__vJ2KcnW20P]: hasVariant(
                       $state,
-                      "mentionsLegales",
-                      "mentionsLegales"
+                      "mentions",
+                      "mentions"
                     )
                   }
                 )}
@@ -386,21 +372,17 @@ function PlasmicAccueil__RenderFunc(props: {
                 {"Mentions légales"}
               </h1>
             ) : null}
-            {(
-              hasVariant($state, "mentionsLegales", "mentionsLegales")
-                ? true
-                : true
-            ) ? (
+            {(hasVariant($state, "mentions", "mentions") ? true : true) ? (
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
                   sty.text__yNrfB,
                   {
-                    [sty.textmentionsLegales__yNrfBnW20P]: hasVariant(
+                    [sty.textmentions__yNrfBnW20P]: hasVariant(
                       $state,
-                      "mentionsLegales",
-                      "mentionsLegales"
+                      "mentions",
+                      "mentions"
                     )
                   }
                 )}
@@ -561,10 +543,10 @@ function PlasmicAccueil__RenderFunc(props: {
 
           <div
             className={classNames(projectcss.all, sty.freeBox___2Zx4T, {
-              [sty.freeBoxmentionsLegales___2Zx4TnW20P]: hasVariant(
+              [sty.freeBoxmentions___2Zx4TnW20P]: hasVariant(
                 $state,
-                "mentionsLegales",
-                "mentionsLegales"
+                "mentions",
+                "mentions"
               ),
               [sty.freeBoxmerci___2Zx4TNshOl]: hasVariant(
                 $state,
