@@ -413,40 +413,6 @@ function PlasmicAccueil__RenderFunc(props: {
                         sty.h6__d2Okt
                       )}
                     >
-                      {"Directeur de la publication"}
-                    </h6>
-                  }
-                  <React.Fragment>
-                    {
-                      "Marie-Do Aeschlimann\n© Marie-Do Aeschlimann 2023. Tous droits d’auteur réservés.\n"
-                    }
-                  </React.Fragment>
-                  {
-                    <h6
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h6,
-                        projectcss.__wab_text,
-                        sty.h6__utneb
-                      )}
-                    >
-                      {"Hébergement"}
-                    </h6>
-                  }
-                  <React.Fragment>
-                    {
-                      "OVH\n2 rue Kellermann 59100 Roubaix – France\nwww.ovh.com\nTél : 0899 701 761\n(1,349 € ttc / appel puis 0,337 € ttc / min)\n"
-                    }
-                  </React.Fragment>
-                  {
-                    <h6
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h6,
-                        projectcss.__wab_text,
-                        sty.h6__g887X
-                      )}
-                    >
                       {"Données personnelles "}
                     </h6>
                   }
@@ -533,7 +499,41 @@ function PlasmicAccueil__RenderFunc(props: {
                       {"ses conditions générales d'utilisation"}
                     </p.PlasmicLink>
                   }
-                  <React.Fragment>{"."}</React.Fragment>
+                  <React.Fragment>{".\n"}</React.Fragment>
+                  {
+                    <h6
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h6,
+                        projectcss.__wab_text,
+                        sty.h6___4OtJi
+                      )}
+                    >
+                      {"Directeur de la publication"}
+                    </h6>
+                  }
+                  <React.Fragment>
+                    {
+                      "Marie-Do Aeschlimann\n© Marie-Do Aeschlimann 2023. Tous droits d’auteur réservés.\n"
+                    }
+                  </React.Fragment>
+                  {
+                    <h6
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h6,
+                        projectcss.__wab_text,
+                        sty.h6__qPg6A
+                      )}
+                    >
+                      {"Hébergement"}
+                    </h6>
+                  }
+                  <React.Fragment>
+                    {
+                      "OVH\n2 rue Kellermann 59100 Roubaix – France\nwww.ovh.com\nTél : 0899 701 761\n(1,349 € ttc / appel puis 0,337 € ttc / min)"
+                    }
+                  </React.Fragment>
                 </React.Fragment>
               </div>
             ) : null}
