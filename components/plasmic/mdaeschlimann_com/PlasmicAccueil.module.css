@@ -99,9 +99,6 @@
 .form:global(.__wab_instance) {
   position: relative;
 }
-.formmerci:global(.__wab_instance) {
-  display: none;
-}
 .freeBox___2Zx4T {
   display: flex;
   position: sticky;

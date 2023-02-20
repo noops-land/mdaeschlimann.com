@@ -301,7 +301,7 @@ function PlasmicAccueil__RenderFunc(props: {
                 </React.Fragment>
               </div>
             ) : null}
-            {(hasVariant($state, "merci", "merci") ? true : true) ? (
+            {(hasVariant($state, "merci", "merci") ? false : true) ? (
               <Form
                 data-plasmic-name={"form"}
                 data-plasmic-override={overrides.form}
