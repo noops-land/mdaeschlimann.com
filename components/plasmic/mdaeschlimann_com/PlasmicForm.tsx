@@ -35,6 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import TextInput from "../../TextInput"; // plasmic-import: JUigd8V3ygI/component
+import { PhoneInput } from "react-phone-number-input"; // plasmic-import: wFZFbIbWW8/codeComponent
 import Checkbox from "../../Checkbox"; // plasmic-import: W-4lJh8DJRw/component
 import Button from "../../Button"; // plasmic-import: a1_SE8wfWDQ/component
 
@@ -56,9 +57,15 @@ export type PlasmicForm__VariantsArgs = {
 type VariantPropType = keyof PlasmicForm__VariantsArgs;
 export const PlasmicForm__VariantProps = new Array<VariantPropType>("merci");
 
-export type PlasmicForm__ArgsType = {};
+export type PlasmicForm__ArgsType = {
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
+};
 type ArgPropType = keyof PlasmicForm__ArgsType;
-export const PlasmicForm__ArgProps = new Array<ArgPropType>();
+export const PlasmicForm__ArgProps = new Array<ArgPropType>(
+  "startIcon",
+  "endIcon"
+);
 
 export type PlasmicForm__OverridesType = {
   root?: p.Flex<"form">;
@@ -66,7 +73,10 @@ export type PlasmicForm__OverridesType = {
   nom?: p.Flex<typeof TextInput>;
   email?: p.Flex<typeof TextInput>;
   ville?: p.Flex<typeof TextInput>;
-  telephone?: p.Flex<typeof TextInput>;
+  freeBox?: p.Flex<"div">;
+  startIconContainer?: p.Flex<"div">;
+  phoneInput?: p.Flex<typeof PhoneInput>;
+  endIconContainer?: p.Flex<"div">;
   checkbox?: p.Flex<typeof Checkbox>;
   text?: p.Flex<"div">;
   link?: p.Flex<"a"> & Partial<LinkProps>;
@@ -74,6 +84,8 @@ export type PlasmicForm__OverridesType = {
 };
 
 export interface DefaultFormProps {
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
   merci?: SingleBooleanChoiceArg<"merci">;
   className?: string;
 }
@@ -183,15 +195,56 @@ function PlasmicForm__RenderFunc(props: {
           placeholder={"Ville" as const}
         />
 
-        <TextInput
-          data-plasmic-name={"telephone"}
-          data-plasmic-override={overrides.telephone}
-          className={classNames("__wab_instance", sty.telephone)}
-          hover={"Veuillez indiquer votre numéro de téléphone" as const}
-          name={"telephone" as const}
-          placeholder={"Téléphone" as const}
-          type={"tel" as const}
-        />
+        <div
+          data-plasmic-name={"freeBox"}
+          data-plasmic-override={overrides.freeBox}
+          className={classNames(projectcss.all, sty.freeBox)}
+        >
+          {true ? (
+            <div
+              data-plasmic-name={"startIconContainer"}
+              data-plasmic-override={overrides.startIconContainer}
+              className={classNames(projectcss.all, sty.startIconContainer)}
+            >
+              {p.renderPlasmicSlot({
+                defaultContents: (
+                  <SearchsvgIcon
+                    className={classNames(projectcss.all, sty.svg__wj3Qq)}
+                    role={"img"}
+                  />
+                ),
+
+                value: args.startIcon
+              })}
+            </div>
+          ) : null}
+
+          <PhoneInput
+            data-plasmic-name={"phoneInput"}
+            data-plasmic-override={overrides.phoneInput}
+            className={classNames("__wab_instance", sty.phoneInput)}
+            placeHolder={"Téléphone" as const}
+          />
+
+          {true ? (
+            <div
+              data-plasmic-name={"endIconContainer"}
+              data-plasmic-override={overrides.endIconContainer}
+              className={classNames(projectcss.all, sty.endIconContainer)}
+            >
+              {p.renderPlasmicSlot({
+                defaultContents: (
+                  <ChecksvgIcon
+                    className={classNames(projectcss.all, sty.svg___8IvGw)}
+                    role={"img"}
+                  />
+                ),
+
+                value: args.endIcon
+              })}
+            </div>
+          ) : null}
+        </div>
 
         <Checkbox
           data-plasmic-name={"checkbox"}
@@ -257,7 +310,10 @@ const PlasmicDescendants = {
     "nom",
     "email",
     "ville",
-    "telephone",
+    "freeBox",
+    "startIconContainer",
+    "phoneInput",
+    "endIconContainer",
     "checkbox",
     "text",
     "link",
@@ -267,7 +323,10 @@ const PlasmicDescendants = {
   nom: ["nom"],
   email: ["email"],
   ville: ["ville"],
-  telephone: ["telephone"],
+  freeBox: ["freeBox", "startIconContainer", "phoneInput", "endIconContainer"],
+  startIconContainer: ["startIconContainer"],
+  phoneInput: ["phoneInput"],
+  endIconContainer: ["endIconContainer"],
   checkbox: ["checkbox", "text", "link"],
   text: ["text", "link"],
   link: ["link"],
@@ -282,7 +341,10 @@ type NodeDefaultElementType = {
   nom: typeof TextInput;
   email: typeof TextInput;
   ville: typeof TextInput;
-  telephone: typeof TextInput;
+  freeBox: "div";
+  startIconContainer: "div";
+  phoneInput: typeof PhoneInput;
+  endIconContainer: "div";
   checkbox: typeof Checkbox;
   text: "div";
   link: "a";
@@ -354,7 +416,10 @@ export const PlasmicForm = Object.assign(
     nom: makeNodeComponent("nom"),
     email: makeNodeComponent("email"),
     ville: makeNodeComponent("ville"),
-    telephone: makeNodeComponent("telephone"),
+    freeBox: makeNodeComponent("freeBox"),
+    startIconContainer: makeNodeComponent("startIconContainer"),
+    phoneInput: makeNodeComponent("phoneInput"),
+    endIconContainer: makeNodeComponent("endIconContainer"),
     checkbox: makeNodeComponent("checkbox"),
     text: makeNodeComponent("text"),
     link: makeNodeComponent("link"),

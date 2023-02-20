@@ -95,21 +95,58 @@
   width: 1em;
   height: 1em;
 }
-.telephone:global(.__wab_instance) {
+.freeBox {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: flex-start;
+  background: #ffffff;
+  position: sticky;
+  min-width: 0;
+  border-radius: 6px;
+  padding: 7px 11px;
+  border: 1px solid #dbdbd7;
+}
+.startIconContainer {
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  left: auto;
+  top: auto;
+  margin-right: 8px;
+  display: none;
+}
+.svg__wj3Qq {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
+.phoneInput:global(.__wab_instance) {
   max-width: 100%;
+  object-fit: cover;
   position: relative;
 }
-.svg__j2Tdo {
+.endIconContainer {
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  left: auto;
+  top: auto;
+  margin-left: 8px;
+  display: none;
+}
+.svg___8IvGw {
   position: relative;
   object-fit: cover;
   width: 1em;
   height: 1em;
-}
-.svg__xWPvZ {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
+  flex-shrink: 0;
 }
 .checkbox:global(.__wab_instance) {
   max-width: 100%;

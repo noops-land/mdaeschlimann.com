@@ -43,6 +43,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_mdaeschlimann_com.module.css"; // plasmic-import: p4LaNHsjacaypvn2fBdVp1/projectcss
 import sty from "./PlasmicAccueil.module.css"; // plasmic-import: SRL_deXEpapHr/css
 
+import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: 8Kq5biUcOP2KT1/icon
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: a6P6rGXfRam2Qq/icon
 import FacebookIcon from "./icons/PlasmicIcon__Facebook"; // plasmic-import: bS4_04WE0n/icon
 import InstagramIcon from "./icons/PlasmicIcon__Instagram"; // plasmic-import: CLNhNHAXHb/icon
 import TwitterIcon from "./icons/PlasmicIcon__Twitter"; // plasmic-import: xNSgQQVONs/icon
