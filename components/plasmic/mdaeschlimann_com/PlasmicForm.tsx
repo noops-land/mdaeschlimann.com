@@ -146,9 +146,9 @@ function PlasmicForm__RenderFunc(props: {
           data-plasmic-name={"prenom"}
           data-plasmic-override={overrides.prenom}
           className={classNames("__wab_instance", sty.prenom)}
-          hover={"Veuillez indiquer votre prénom" as const}
+          hover={"Veuillez indiquer votre prénom (requis)" as const}
           name={"prenom" as const}
-          placeholder={"Prénom" as const}
+          placeholder={"Prénom*" as const}
           required={true}
         />
 
@@ -156,9 +156,9 @@ function PlasmicForm__RenderFunc(props: {
           data-plasmic-name={"nom"}
           data-plasmic-override={overrides.nom}
           className={classNames("__wab_instance", sty.nom)}
-          hover={"Veuillez indiquer votre nom" as const}
+          hover={"Veuillez indiquer votre nom (requis)" as const}
           name={"nom" as const}
-          placeholder={"Nom" as const}
+          placeholder={"Nom*" as const}
           required={true}
         />
 
@@ -166,9 +166,9 @@ function PlasmicForm__RenderFunc(props: {
           data-plasmic-name={"email"}
           data-plasmic-override={overrides.email}
           className={classNames("__wab_instance", sty.email)}
-          hover={"Veuillez indiquer votre adresse email" as const}
+          hover={"Veuillez indiquer votre adresse email (requis)" as const}
           name={"email" as const}
-          placeholder={"Email" as const}
+          placeholder={"Email*" as const}
           required={true}
           type={"email" as const}
         />

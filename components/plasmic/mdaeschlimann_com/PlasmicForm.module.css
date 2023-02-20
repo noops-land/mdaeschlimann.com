@@ -123,6 +123,12 @@
     font-size: 12px;
   }
 }
+.link__zzpz {
+  color: var(--token-R0U2Hb0lcUyHBT);
+}
+.link__gW7Bj {
+  color: var(--token-R0U2Hb0lcUyHBT);
+}
 .button:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
