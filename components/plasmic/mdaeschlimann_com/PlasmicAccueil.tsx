@@ -358,7 +358,7 @@ function PlasmicAccueil__RenderFunc(props: {
                 })}
               />
             ) : null}
-            {(hasVariant($state, "mentions", "mentions") ? true : true) ? (
+            {(hasVariant($state, "mentions", "mentions") ? true : false) ? (
               <h1
                 className={classNames(
                   projectcss.all,
@@ -377,7 +377,7 @@ function PlasmicAccueil__RenderFunc(props: {
                 {"Mentions légales"}
               </h1>
             ) : null}
-            {(hasVariant($state, "mentions", "mentions") ? true : true) ? (
+            {(hasVariant($state, "mentions", "mentions") ? true : false) ? (
               <div
                 className={classNames(
                   projectcss.all,
