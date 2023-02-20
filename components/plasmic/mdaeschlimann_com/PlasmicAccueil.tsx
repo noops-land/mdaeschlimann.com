@@ -308,7 +308,6 @@ function PlasmicAccueil__RenderFunc(props: {
                 className={classNames("__wab_instance", sty.form, {
                   [sty.formmerci]: hasVariant($state, "merci", "merci")
                 })}
-                merci={hasVariant($state, "merci", "merci") ? true : undefined}
               />
             ) : null}
           </div>
