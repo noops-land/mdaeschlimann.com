@@ -15,7 +15,7 @@ import { PhoneInput } from '@/components/PhoneInput';
 registerComponent(PhoneInput, {
       name: 'PhoneInput',
       props: {
-            placeHolder: 'string',
+            placeHolder: 'string'
       },
       importPath: './components/PhoneInput'
 });
