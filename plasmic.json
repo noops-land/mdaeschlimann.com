@@ -95,19 +95,6 @@
           "cssFilePath": "plasmic/mdaeschlimann_com/PlasmicForm.module.css",
           "scheme": "blackbox",
           "componentType": "component"
-        },
-        {
-          "id": "7HC8u6YYby",
-          "name": "NewPage",
-          "type": "managed",
-          "projectId": "p4LaNHsjacaypvn2fBdVp1",
-          "renderModuleFilePath": "plasmic/mdaeschlimann_com/PlasmicNewPage.tsx",
-          "importSpec": {
-            "modulePath": "../pages/new-page.tsx"
-          },
-          "cssFilePath": "plasmic/mdaeschlimann_com/PlasmicNewPage.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
         }
       ],
       "icons": [
