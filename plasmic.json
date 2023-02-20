@@ -185,9 +185,9 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         },
         {
-          "id": "gN2RQ6PeTm",
+          "id": "_M8ybQ-1SP",
           "name": "PhoneInput",
-          "componentImportPath": "react-phone-number-input"
+          "componentImportPath": "./components/PhoneInput"
         }
       ]
     }

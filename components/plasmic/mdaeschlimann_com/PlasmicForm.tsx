@@ -35,7 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import TextInput from "../../TextInput"; // plasmic-import: JUigd8V3ygI/component
-import { PhoneInput } from "react-phone-number-input"; // plasmic-import: gN2RQ6PeTm/codeComponent
+import { PhoneInput } from "../../PhoneInput"; // plasmic-import: _M8ybQ-1SP/codeComponent
 import Checkbox from "../../Checkbox"; // plasmic-import: W-4lJh8DJRw/component
 import Button from "../../Button"; // plasmic-import: a1_SE8wfWDQ/component
 
