@@ -29,7 +29,26 @@ function Accueil() {
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicAccueil />
+      <PlasmicAccueil
+        root={{
+          props: {
+            onSubmit: (event: any) => {
+              let checked = false;
+              const formData = new FormData(event.target);
+              const data = formData.entries()
+              for (const entry of data) {
+                if (entry[0] === "checked") {
+                  checked = true
+                }
+              }
+              if (!checked) {
+                event.preventDefault();
+                alert("Veuillez confirmer que vous souhaitez recevoir la newsletter en cochant la case prévue à cet effet.")
+              }
+            }
+          }
+        }}
+      />
     </ph.PageParamsProvider>
   );
 }
