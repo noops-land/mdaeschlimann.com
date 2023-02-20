@@ -7,13 +7,15 @@ import SrcPhoneInput from 'react-phone-number-input';
 interface PhoneInputProps {
   className?: string
   placeHolder?: string
+  name?: string
 }
 
-export function PhoneInput({ className, placeHolder }: PhoneInputProps) {
+export function PhoneInput({ className, placeHolder, name }: PhoneInputProps) {
   let [value, setValue]: [E164Number | undefined, any] = useState()
   return <>
 
     <SrcPhoneInput
+      name={name}
       className={className}
       placeHolder={placeHolder}
       value={value}
