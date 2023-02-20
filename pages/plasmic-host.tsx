@@ -2,7 +2,6 @@
 import * as React from 'react';
 import Script from 'next/script';
 import { PlasmicCanvasHost, registerComponent } from '@plasmicapp/host';
-import 'react-phone-number-input/style.css'
 import { useState } from 'react';
 import { E164Number } from 'libphonenumber-js/types';
 import PhoneInput from 'react-phone-number-input';
@@ -21,14 +20,9 @@ interface CPhoneInputProps {
 
 function CPhoneInput({ className, placeHolder }: CPhoneInputProps) {
       let [value, setValue]: [E164Number | undefined, any] = useState()
-      return <PhoneInput
-            placeHolder={placeHolder}
-            value={value}
-            onChange={setValue}
-            className={className}
-            defaultCountry="FR" />
-      {/* <style>
-      :root {`
+      return <>
+            <style>
+                  :root {`
     {
     --PhoneInput-color--focus: #03b2cb;
     --PhoneInputInternationalIconPhone-opacity: 0.8;
@@ -48,13 +42,13 @@ function CPhoneInput({ className, placeHolder }: CPhoneInputProps) {
     --PhoneInputCountryFlag-borderColor--focus: var(--PhoneInput-color--focus);
     --PhoneInputCountryFlag-backgroundColor--loading: rgba(0,0,0,0.1);
 }`
-      }
-      .PhoneInput {`
+                  }
+                  .PhoneInput {`
 {
   display: flex; align-items: center;
 }`
-      }
-      .PhoneInputCountry {`
+                  }
+                  .PhoneInputCountry {`
 {
     position: relative;
     align-self: stretch;
@@ -63,8 +57,8 @@ function CPhoneInput({ className, placeHolder }: CPhoneInputProps) {
     margin-right: 0.35em;
     margin-right: var(--PhoneInputCountrySelect-marginRight);
 }`
-      }
-      .PhoneInputCountrySelect {`
+                  }
+                  .PhoneInputCountrySelect {`
 {
     position: absolute;
     top: 0;
@@ -76,31 +70,31 @@ function CPhoneInput({ className, placeHolder }: CPhoneInputProps) {
     opacity: 0;
     cursor: pointer;
 }`
-      }
-      .PhoneInputCountryIcon--border {`
+                  }
+                  .PhoneInputCountryIcon--border {`
 {
     background-color: rgba(0,0,0,0.1);
     background-color: var(--PhoneInputCountryFlag-backgroundColor--loading);
     box-shadow: 0 0 0 1px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(0,0,0,0.5);
     box-shadow: 0 0 0 var(--PhoneInputCountryFlag-borderWidth) var(--PhoneInputCountryFlag-borderColor), inset 0 0 0 var(--PhoneInputCountryFlag-borderWidth) var(--PhoneInputCountryFlag-borderColor);
 }`
-      }
-      .PhoneInputCountryIcon {`
+                  }
+                  .PhoneInputCountryIcon {`
 {
     width: calc(1em * 1.5);
     width: calc(var(--PhoneInputCountryFlag-height) * var(--PhoneInputCountryFlag-aspectRatio));
     height: 1em;
     height: var(--PhoneInputCountryFlag-height);
 }`
-      }
-      .PhoneInputCountryIconImg {`
+                  }
+                  .PhoneInputCountryIconImg {`
 {
     display: block;
     width: 100%;
     height: 100%;
 }`
-      }
-      .PhoneInputCountrySelectArrow {`
+                  }
+                  .PhoneInputCountrySelectArrow {`
 {
     display: block;
     content: '';
@@ -124,8 +118,8 @@ function CPhoneInput({ className, placeHolder }: CPhoneInputProps) {
     opacity: 0.45;
     opacity: var(--PhoneInputCountrySelectArrow-opacity);
 }`
-      }
-      .PhoneInputInput {`
+                  }
+                  .PhoneInputInput {`
 {
     padding-left: 0.4em;
     padding-right: 0.4em;
@@ -139,15 +133,21 @@ function CPhoneInput({ className, placeHolder }: CPhoneInputProps) {
     -moz-appearance: none;
     appearance: none;
 }`
-      }
-      .PhoneInputInput {`
+                  }
+                  .PhoneInputInput {`
 {
     flex: 1;
     min-width: 0;
 }`
-      }
-    </style> */}
-
+                  }
+            </style>
+            <PhoneInput
+                  placeHolder={placeHolder}
+                  value={value}
+                  onChange={setValue}
+                  className={className}
+                  defaultCountry="FR" />
+      </>
 }
 
 registerComponent(CPhoneInput, {
