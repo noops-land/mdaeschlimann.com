@@ -99,19 +99,9 @@
       ],
       "icons": [
         {
-          "id": "A2s5Wi2XoXti-v",
-          "name": "PlayingCardHeartShapesvgIcon",
-          "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__PlayingCardHeartShapesvg.tsx"
-        },
-        {
           "id": "a6P6rGXfRam2Qq",
           "name": "ChecksvgIcon",
           "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__Checksvg.tsx"
-        },
-        {
-          "id": "6bUeWVyQ0aveT9",
-          "name": "BlackCommentsBubbleSvgrepoComsvgIcon",
-          "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__BlackCommentsBubbleSvgrepoComsvg.tsx"
         },
         {
           "id": "8Kq5biUcOP2KT1",
