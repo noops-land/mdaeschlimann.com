@@ -224,7 +224,7 @@ function PlasmicForm__RenderFunc(props: {
             data-plasmic-override={overrides.phoneInput}
             className={classNames("__wab_instance", sty.phoneInput)}
             name={"telephone" as const}
-            placeHolder={"Téléphone" as const}
+            placeholder={"Téléphone" as const}
           />
 
           {true ? (
