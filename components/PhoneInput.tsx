@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { E164Number } from 'libphonenumber-js/types';
-import SrcPhoneInput from 'react-phone-number-input';
+import SrcPhoneInput, { isPossiblePhoneNumber } from 'react-phone-number-input';
 
 interface PhoneInputProps {
   className?: string
@@ -18,9 +18,12 @@ export function PhoneInput({ className, placeHolder, name }: PhoneInputProps) {
       name={name}
       className={className}
       placeHolder={placeHolder}
+      defaultCountry="FR"
+      error={value ? (isPossiblePhoneNumber(value) ? undefined : 'Numéro de téléphone invalide') : undefined}
+      formattedValue={value}
       value={value}
       onChange={setValue}
-      defaultCountry="FR" />
+       />
     <style>
       :root {`
 {
@@ -150,5 +153,6 @@ min-width: 0;
 }`
       }
     </style>
+    <p>{value}</p>
   </>
 }
