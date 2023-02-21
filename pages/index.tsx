@@ -37,7 +37,6 @@ function Accueil() {
               const formData = new FormData(event.target);
               const data = formData.entries()
               for (const entry of data) {
-                console.log(entry)
                 if (entry[0] === "checked") {
                   checked = true
                 }

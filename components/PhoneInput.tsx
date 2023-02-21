@@ -5,27 +5,25 @@ import { E164Number } from 'libphonenumber-js/types';
 import SrcPhoneInput, { isPossiblePhoneNumber } from 'react-phone-number-input';
 
 interface PhoneInputProps {
-  className?: string
-  placeHolder?: string
-  name?: string
+      className?: string
+      placeholder?: string
+      name?: string
 }
 
-export function PhoneInput({ className, placeHolder, name }: PhoneInputProps) {
-  let [value, setValue]: [E164Number | undefined, any] = useState()
-  return <>
-
-    <SrcPhoneInput
-      name={name}
-      className={className}
-      placeHolder={placeHolder}
-      defaultCountry="FR"
-      error={value ? (isPossiblePhoneNumber(value) ? undefined : 'Numéro de téléphone invalide') : undefined}
-      formattedValue={value}
-      value={value}
-      onChange={setValue}
-       />
-    <style>
-      :root {`
+export function PhoneInput({ className, placeholder, name }: PhoneInputProps) {
+      let [value, setValue]: [E164Number | undefined, any] = useState()
+      return <>
+            <SrcPhoneInput
+                  onChange={setValue}
+                  value={value}
+                  name={name}
+                  className={className}
+                  placeholder={placeholder}
+                  defaultCountry="FR"
+                  error={value ? (isPossiblePhoneNumber(value) ? undefined : 'Numéro de téléphone invalide') : undefined}
+            />
+            <style>
+                  :root {`
 {
 --PhoneInput-color--focus: #03b2cb;
 --PhoneInputInternationalIconPhone-opacity: 0.8;
@@ -45,13 +43,13 @@ export function PhoneInput({ className, placeHolder, name }: PhoneInputProps) {
 --PhoneInputCountryFlag-borderColor--focus: var(--PhoneInput-color--focus);
 --PhoneInputCountryFlag-backgroundColor--loading: rgba(0,0,0,0.1);
 }`
-      }
-      .PhoneInput {`
+                  }
+                  .PhoneInput {`
 {
 display: flex; align-items: center;
 }`
-      }
-      .PhoneInputCountry {`
+                  }
+                  .PhoneInputCountry {`
 {
 position: relative;
 align-self: stretch;
@@ -60,8 +58,8 @@ align-items: center;
 margin-right: 0.35em;
 margin-right: var(--PhoneInputCountrySelect-marginRight);
 }`
-      }
-      .PhoneInputCountrySelect {`
+                  }
+                  .PhoneInputCountrySelect {`
 {
 position: absolute;
 top: 0;
@@ -73,31 +71,31 @@ border: 0;
 opacity: 0;
 cursor: pointer;
 }`
-      }
-      .PhoneInputCountryIcon--border {`
+                  }
+                  .PhoneInputCountryIcon--border {`
 {
 background-color: rgba(0,0,0,0.1);
 background-color: var(--PhoneInputCountryFlag-backgroundColor--loading);
 box-shadow: 0 0 0 1px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(0,0,0,0.5);
 box-shadow: 0 0 0 var(--PhoneInputCountryFlag-borderWidth) var(--PhoneInputCountryFlag-borderColor), inset 0 0 0 var(--PhoneInputCountryFlag-borderWidth) var(--PhoneInputCountryFlag-borderColor);
 }`
-      }
-      .PhoneInputCountryIcon {`
+                  }
+                  .PhoneInputCountryIcon {`
 {
 width: calc(1em * 1.5);
 width: calc(var(--PhoneInputCountryFlag-height) * var(--PhoneInputCountryFlag-aspectRatio));
 height: 1em;
 height: var(--PhoneInputCountryFlag-height);
 }`
-      }
-      .PhoneInputCountryIconImg {`
+                  }
+                  .PhoneInputCountryIconImg {`
 {
 display: block;
 width: 100%;
 height: 100%;
 }`
-      }
-      .PhoneInputCountrySelectArrow {`
+                  }
+                  .PhoneInputCountrySelectArrow {`
 {
 display: block;
 content: '';
@@ -121,8 +119,8 @@ transform: var(--PhoneInputCountrySelectArrow-transform);
 opacity: 0.45;
 opacity: var(--PhoneInputCountrySelectArrow-opacity);
 }`
-      }
-      .PhoneInputInput {`
+                  }
+                  .PhoneInputInput {`
 {
 font-family: var(--mixin-5Aea3rR1fDdpd_font-family);
 font-size: var(--mixin-5Aea3rR1fDdpd_font-size);
@@ -145,14 +143,13 @@ outline: none;
 -moz-appearance: none;
 appearance: none;
 }`
-      }
-      .PhoneInputInput {`
+                  }
+                  .PhoneInputInput {`
 {
 flex: 1;
 min-width: 0;
 }`
-      }
-    </style>
-    <p>{value}</p>
-  </>
+                  }
+            </style>
+      </>
 }
