@@ -45,6 +45,10 @@ function Accueil() {
                 event.preventDefault();
                 alert("Veuillez confirmer que vous souhaitez recevoir la newsletter en cochant la case prévue à cet effet.")
               }
+              if (event.target.querySelector('.PhoneInputInput').getAttribute("error")) {
+                event.preventDefault();
+                alert("Merci de vérifier le numéro de téléphone fourni.")
+              }
             }
           }
         }}
