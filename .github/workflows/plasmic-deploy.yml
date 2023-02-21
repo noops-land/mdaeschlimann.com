@@ -21,7 +21,7 @@ jobs:
           ref: main
           check-name: 'Syncing Plasmic project...'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
+          wait-interval: 200
       - id: build
         name: Building Plasmic app...
         uses: plasmicapp/plasmic-action@master
