@@ -1,3 +1,6 @@
+.PhoneInput {
+  width: 100%;
+}
 .PhoneInputInput {
   font-family: var(--mixin-5Aea3rR1fDdpd_font-family);
   font-size: var(--mixin-5Aea3rR1fDdpd_font-size);
