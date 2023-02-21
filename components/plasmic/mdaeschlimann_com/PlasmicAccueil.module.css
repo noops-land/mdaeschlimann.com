@@ -57,9 +57,8 @@
   width: 100%;
   justify-content: flex-start;
   align-items: center;
-  height: 100%;
+  margin-bottom: 51px;
   min-width: 0;
-  min-height: 0;
   padding: 1em 0em;
 }
 @media (min-width: 0px) and (max-width: 768px) {
@@ -149,19 +148,19 @@
 }
 .freeBox___2Zx4T {
   display: flex;
-  position: sticky;
+  position: fixed;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: auto;
   height: auto;
   max-width: 100%;
   background: var(--token-R0U2Hb0lcUyHBT);
-  left: 0px;
+  left: 0;
   top: auto;
   z-index: 1;
-  bottom: 0px;
-  min-width: 0;
+  right: 0;
+  bottom: 0;
   padding: 4px;
 }
 @media (min-width: 0px) and (max-width: 768px) {
