@@ -20,7 +20,7 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 //
 // You can also stop extending from DefaultFormProps altogether and have
 // total control over the props for your component.
-export interface FormProps extends DefaultFormProps {}
+export interface FormProps extends DefaultFormProps { }
 
 function Form_(props: FormProps, ref: HTMLElementRefOf<"form">) {
   // Use PlasmicForm to render this component as it was
@@ -37,6 +37,17 @@ function Form_(props: FormProps, ref: HTMLElementRefOf<"form">) {
   //
   // By default, we are just piping all FormProps here, but feel free
   // to do whatever works for you.
+
+  React.useEffect(() => {
+    const formElem = document.querySelector('form')
+    formElem?.addEventListener('formdata', (e) => {
+      const formdata = e.formData;
+      const phonevalue = formElem.querySelector('.PhoneInputInput')?.getAttribute("phonevalue");
+      if (phonevalue) {
+        formdata.set('telephone', phonevalue)
+      }
+    })
+  })
 
   return <PlasmicForm root={{ ref }} {...props} />;
 }

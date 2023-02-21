@@ -15,6 +15,7 @@ export function PhoneInput({ className, placeholder, name }: PhoneInputProps) {
       return <SrcPhoneInput
                   onChange={setValue}
                   value={value}
+                  phonevalue={value}
                   name={name}
                   className={className}
                   placeholder={placeholder}
