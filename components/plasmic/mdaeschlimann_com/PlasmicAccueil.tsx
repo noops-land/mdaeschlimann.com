@@ -438,11 +438,11 @@ function PlasmicAccueil__RenderFunc(props: {
                           projectcss.all,
                           projectcss.li,
                           projectcss.__wab_text,
-                          sty.li__jheyx
+                          sty.li___0Zh58
                         )}
                       >
                         {
-                          "de permettre aux visiteurs d’envoyer une correspondance à Mme Marie-Do Aeschlimann via le formulaire de contact. Dans ce cas les données sont conservées dans la limite fixée par la législation et -au plus- celle des mandats électifs de Mme Marie-Do Aeschlimann."
+                          "de permettre aux visiteurs de s’abonner à la newsletter de Mme Marie-Do Aeschlimann. Dans ce cas, les données sont conservées dans la limite de la demande de retrait (opt out) que ferait la personne abonnée."
                         }
                       </li>
 
@@ -451,11 +451,11 @@ function PlasmicAccueil__RenderFunc(props: {
                           projectcss.all,
                           projectcss.li,
                           projectcss.__wab_text,
-                          sty.li___0Zh58
+                          sty.li__jheyx
                         )}
                       >
                         {
-                          "de permettre aux visiteurs de s’abonner à la newsletter de Mme Marie-Do Aeschlimann. Dans ce cas, les données sont conservées dans la limite de la demande de retrait (opt out) que ferait la personne abonnée."
+                          "de permettre aux visiteurs d’envoyer une correspondance à Mme Marie-Do Aeschlimann via le formulaire de contact. Dans ce cas les données sont conservées dans la limite fixée par la législation et -au plus- celle des mandats électifs de Mme Marie-Do Aeschlimann."
                         }
                       </li>
                     </ul>
