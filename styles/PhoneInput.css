@@ -1,0 +1,22 @@
+.PhoneInputInput {
+  font-family: var(--mixin-5Aea3rR1fDdpd_font-family);
+  font-size: var(--mixin-5Aea3rR1fDdpd_font-size);
+  font-weight: var(--mixin-5Aea3rR1fDdpd_font-weight);
+  font-style: var(--mixin-5Aea3rR1fDdpd_font-style);
+  color: var(--mixin-5Aea3rR1fDdpd_color);
+  text-align: var(--mixin-5Aea3rR1fDdpd_text-align);
+  text-transform: var(--mixin-5Aea3rR1fDdpd_text-transform);
+  letter-spacing: var(--mixin-5Aea3rR1fDdpd_letter-spacing);
+  white-space: var(--mixin-5Aea3rR1fDdpd_white-space);
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  border-radius: 0.2em;
+  border: 1px solid #ffffff;
+  background-color: #fcfcfc;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
