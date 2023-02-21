@@ -12,7 +12,7 @@ on:
 
 jobs:
   job:
-    name: Sync, build and deploy
+    name: Build and deploy
     runs-on: ubuntu-latest
     steps:
       - name: Wait for plasmic sync to succeed
@@ -21,7 +21,7 @@ jobs:
           ref: ${{ github.ref }}
           check-name: 'Syncing Plasmic project...'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
+          wait-interval: 200
       - id: build
         name: Building Plasmic app...
         uses: plasmicapp/plasmic-action@master
