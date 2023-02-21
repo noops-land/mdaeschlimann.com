@@ -18,10 +18,10 @@ jobs:
       - name: Wait for plasmic sync to succeed
         uses: lewagon/wait-on-check-action@v1.3.1
         with:
-          ref: ${{ github.ref }}
+          ref: main
           check-name: 'Syncing Plasmic project...'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 200
+          wait-interval: 10
       - id: build
         name: Building Plasmic app...
         uses: plasmicapp/plasmic-action@master
