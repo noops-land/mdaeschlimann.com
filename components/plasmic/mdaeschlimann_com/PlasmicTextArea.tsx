@@ -288,6 +288,7 @@ function PlasmicTextArea__RenderFunc(props: {
         disabled={
           hasVariant($state, "isDisabled", "isDisabled") ? true : undefined
         }
+        name={args.name}
         placeholder={args.placeholder}
         ref={ref => {
           $refs["input"] = ref;
