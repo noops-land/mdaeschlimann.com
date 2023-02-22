@@ -199,6 +199,7 @@ function PlasmicForm__RenderFunc(props: {
           data-plasmic-name={"freeBox"}
           data-plasmic-override={overrides.freeBox}
           className={classNames(projectcss.all, sty.freeBox)}
+          title={"Veuillez indiquer votre numéro de téléphone" as const}
         >
           {true ? (
             <div
