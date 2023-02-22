@@ -164,15 +164,15 @@
         },
         {
           "id": "-NKFW0pekv",
-          "name": "MailRoundSvgrepoComsvgIcon",
-          "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__MailRoundSvgrepoComsvg.tsx"
+          "name": "ContactIcon",
+          "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__Contact.tsx"
         }
       ],
       "images": [
         {
           "id": "eD1c1Eyb0",
-          "name": "marie-do_aeschlimann_action",
-          "filePath": "../public/plasmic/mdaeschlimann_com/images/marieDoAeschlimannAction.jpeg"
+          "name": "marie-do-aeschlimann",
+          "filePath": "../public/plasmic/mdaeschlimann_com/images/marieDoAeschlimann.jpeg"
         }
       ],
       "indirect": false,

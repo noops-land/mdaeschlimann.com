@@ -54,7 +54,7 @@ import FacebookIcon from "./icons/PlasmicIcon__Facebook"; // plasmic-import: bS4
 import InstagramIcon from "./icons/PlasmicIcon__Instagram"; // plasmic-import: CLNhNHAXHb/icon
 import TwitterIcon from "./icons/PlasmicIcon__Twitter"; // plasmic-import: xNSgQQVONs/icon
 import LinkedinIcon from "./icons/PlasmicIcon__Linkedin"; // plasmic-import: R0S2wicba9/icon
-import MailRoundSvgrepoComsvgIcon from "./icons/PlasmicIcon__MailRoundSvgrepoComsvg"; // plasmic-import: -NKFW0pekv/icon
+import ContactIcon from "./icons/PlasmicIcon__Contact"; // plasmic-import: -NKFW0pekv/icon
 
 export type PlasmicAccueil__VariantMembers = {
   merci: "merci";
@@ -267,7 +267,7 @@ function PlasmicAccueil__RenderFunc(props: {
               displayWidth={"auto" as const}
               loading={"eager" as const}
               src={{
-                src: "/plasmic/mdaeschlimann_com/images/marieDoAeschlimannAction.jpeg",
+                src: "/plasmic/mdaeschlimann_com/images/marieDoAeschlimann.jpeg",
                 fullWidth: 4167,
                 fullHeight: 2500,
                 aspectRatio: undefined
@@ -836,6 +836,7 @@ function PlasmicAccueil__RenderFunc(props: {
               component={Link}
               href={"/contact" as const}
               platform={"nextjs"}
+              target={"_blank" as const}
             >
               {"Me contacter : "}
             </p.PlasmicLink>
@@ -854,8 +855,9 @@ function PlasmicAccueil__RenderFunc(props: {
                 component={Link}
                 href={"/contact" as const}
                 platform={"nextjs"}
+                target={"_blank" as const}
               >
-                <MailRoundSvgrepoComsvgIcon
+                <ContactIcon
                   className={classNames(projectcss.all, sty.svg__swCyq)}
                   role={"img"}
                 />

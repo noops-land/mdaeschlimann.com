@@ -5,13 +5,11 @@
 import React from "react";
 import { classNames } from "@plasmicapp/react-web";
 
-export type MailRoundSvgrepoComsvgIconProps = React.ComponentProps<"svg"> & {
+export type ContactIconProps = React.ComponentProps<"svg"> & {
   title?: string;
 };
 
-export function MailRoundSvgrepoComsvgIcon(
-  props: MailRoundSvgrepoComsvgIconProps
-) {
+export function ContactIcon(props: ContactIconProps) {
   const { className, style, title, ...restProps } = props;
   return (
     <svg
@@ -35,5 +33,5 @@ export function MailRoundSvgrepoComsvgIcon(
   );
 }
 
-export default MailRoundSvgrepoComsvgIcon;
+export default ContactIcon;
 /* prettier-ignore-end */
