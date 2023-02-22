@@ -196,6 +196,8 @@
 .checkbox:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
+  margin-top: calc(-5px + 15px) !important;
+  margin-bottom: -5px;
 }
 .text__vpO9 {
   white-space: pre-wrap;
