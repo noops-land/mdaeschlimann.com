@@ -417,7 +417,7 @@ function PlasmicAccueil__RenderFunc(props: {
                   name={"message" as const}
                   placeholder={"Votre message*" as const}
                   required={true}
-                  rows={5 as const}
+                  rows={4 as const}
                 />
 
                 <Checkbox
