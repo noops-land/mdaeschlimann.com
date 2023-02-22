@@ -353,7 +353,7 @@ function PlasmicAccueil__RenderFunc(props: {
               <p.Stack
                 as={"form"}
                 hasGap={true}
-                action={"https://mda.cloudcall.fr/webhook/contact22" as const}
+                action={"https://mda.cloudcall.fr/webhook/contact" as const}
                 className={classNames(projectcss.all, sty.form__s9T, {
                   [sty.formcontact__s9TJyCfV]: hasVariant(
                     $state,
