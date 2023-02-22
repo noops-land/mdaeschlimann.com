@@ -27,8 +27,6 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-      # make sure we are on the latest changelog
-      - run: git pull
       - id: node
         name: Setting up node v18...
         uses: actions/setup-node@v3
@@ -40,12 +38,16 @@ jobs:
         with:
           key: lock-${{ hashFiles('package-lock.json', 'yarn.lock') }}
           path: node_modules
+        # make sure we are on the latest changelog
+      - run: git pull
       - id: build
         name: Build Plasmic app
         uses: plasmicapp/plasmic-action@master
         with:
           run: build
           branch: main
+          directory: ${{ github.event.client_payload.data.directory }}
+          platform: ${{ github.event.client_payload.data.platform }}
       - id: gh-pages
         name: Publish to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.0
