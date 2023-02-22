@@ -224,19 +224,27 @@ function PlasmicAccueil__RenderFunc(props: {
             }
           )}
         >
-          <div
-            className={classNames(projectcss.all, sty.freeBox__okzgc, {
-              [sty.freeBoxmentions__okzgcnW20P]: hasVariant(
-                $state,
-                "mentions",
-                "mentions"
-              ),
-              [sty.freeBoxmerci__okzgcNshOl]: hasVariant(
-                $state,
-                "merci",
-                "merci"
-              )
-            })}
+          <p.PlasmicLink
+            className={classNames(
+              projectcss.all,
+              projectcss.a,
+              sty.link__okzgc,
+              {
+                [sty.linkmentions__okzgcnW20P]: hasVariant(
+                  $state,
+                  "mentions",
+                  "mentions"
+                ),
+                [sty.linkmerci__okzgcNshOl]: hasVariant(
+                  $state,
+                  "merci",
+                  "merci"
+                )
+              }
+            )}
+            component={Link}
+            href={`/`}
+            platform={"nextjs"}
           >
             <p.PlasmicImg
               data-plasmic-name={"img"}
@@ -265,7 +273,7 @@ function PlasmicAccueil__RenderFunc(props: {
                 aspectRatio: undefined
               }}
             />
-          </div>
+          </p.PlasmicLink>
 
           <div
             className={classNames(projectcss.all, sty.freeBox__wzPnx, {
