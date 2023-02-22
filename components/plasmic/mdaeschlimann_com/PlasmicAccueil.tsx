@@ -386,7 +386,7 @@ function PlasmicAccueil__RenderFunc(props: {
                   }
                 )}
               >
-                {"Mentions légales"}
+                {"Mentions légales et \npolitique de confidentialité"}
               </h1>
             ) : null}
             {(hasVariant($state, "mentions", "mentions") ? true : false) ? (

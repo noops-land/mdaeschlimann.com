@@ -284,7 +284,7 @@ function PlasmicForm__RenderFunc(props: {
                   platform={"nextjs"}
                   target={"_blank" as const}
                 >
-                  {"mentions légales"}
+                  {"mentions légales et politique de confidentialité"}
                 </p.PlasmicLink>
               }
               <React.Fragment>{"."}</React.Fragment>
