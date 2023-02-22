@@ -1,9 +1,10 @@
 name: Build and deploy Plasmic app
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Sync, build and deploy Plasmic app"]
+    types:
+      - completed
 
 jobs:
   job:
