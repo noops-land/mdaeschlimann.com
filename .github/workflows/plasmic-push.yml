@@ -17,10 +17,10 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
       - id: node
-        name: Set up node v16
-        uses: actions/setup-node@v2
+        name: Setting up node v18...
+        uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: "18"
       - id: cache
         name: Recover cache
         uses: actions/cache@v2
@@ -33,7 +33,7 @@ jobs:
         with:
           run: build
           branch: main
-          skip_if_plasmic: true
+          skip_if_plasmic: false
       - id: gh-pages
         name: Publish to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.0
