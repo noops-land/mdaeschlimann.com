@@ -1,5 +1,4 @@
-# Plasmic workflow v4
-name: Build and deploy Plasmic app
+name: Deploy Plasmic app
 
 permissions:
   contents: write
@@ -23,7 +22,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 10
       - id: checkout
-        name: Checking out repository...
+        name: Check out repository
         uses: actions/checkout@v2
         with:
           persist-credentials: false
@@ -34,31 +33,22 @@ jobs:
         with:
           node-version: "18"
       - id: cache
-        name: Recovering cache...
+        name: Recover cache
         uses: actions/cache@v2
         with:
-          key: lock-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}
-          path: ${{ github.event.client_payload.data.directory }}/node_modules
+          key: lock-${{ hashFiles('package-lock.json', 'yarn.lock') }}
+          path: node_modules
       - id: build
-        name: Building Plasmic app...
+        name: Build Plasmic app
         uses: plasmicapp/plasmic-action@master
         with:
           run: build
-          branch: ${{ github.event.client_payload.data.branch }}
-          directory: ${{ github.event.client_payload.data.directory }}
-          platform: ${{ github.event.client_payload.data.platform }}
+          branch: main
+          skip_if_plasmic: true
       - id: gh-pages
-        name: Publishing to GitHub Pages...
+        name: Publish to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.0
         if: ${{ steps.build.outputs.publish_dir }}
         with:
           branch: gh-pages
           folder: ${{ steps.build.outputs.publish_dir }}
-      - id: pr
-        name: Creating pull request...
-        uses: repo-sync/pull-request@v2
-        if: ${{ steps.sync.outputs.new_branch }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          source_branch: ${{ steps.sync.outputs.new_branch }}
-          destination_branch: ${{ github.event.client_payload.data.branch }}
