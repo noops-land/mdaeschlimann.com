@@ -54,6 +54,7 @@ import FacebookIcon from "./icons/PlasmicIcon__Facebook"; // plasmic-import: bS4
 import InstagramIcon from "./icons/PlasmicIcon__Instagram"; // plasmic-import: CLNhNHAXHb/icon
 import TwitterIcon from "./icons/PlasmicIcon__Twitter"; // plasmic-import: xNSgQQVONs/icon
 import LinkedinIcon from "./icons/PlasmicIcon__Linkedin"; // plasmic-import: R0S2wicba9/icon
+import MailRoundSvgrepoComsvgIcon from "./icons/PlasmicIcon__MailRoundSvgrepoComsvg"; // plasmic-import: -NKFW0pekv/icon
 
 export type PlasmicAccueil__VariantMembers = {
   merci: "merci";
@@ -738,7 +739,93 @@ function PlasmicAccueil__RenderFunc(props: {
                 sty.text___9IJVq
               )}
             >
-              {"Suivez mon actualité : "}
+              {"Mon actualité : "}
+            </div>
+
+            <p.Stack
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__g0M6E)}
+            >
+              <p.PlasmicLink
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__tKm9Y
+                )}
+                component={Link}
+                href={"https://facebook.com/mariedo.aeschlimann" as const}
+                platform={"nextjs"}
+                target={"_blank" as const}
+              >
+                <FacebookIcon
+                  className={classNames(projectcss.all, sty.svg__jQq9W)}
+                  role={"img"}
+                />
+              </p.PlasmicLink>
+
+              <p.PlasmicLink
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__aAer
+                )}
+                component={Link}
+                href={"https://www.instagram.com/mariedoaeschlimann" as const}
+                platform={"nextjs"}
+                target={"_blank" as const}
+              >
+                <InstagramIcon
+                  className={classNames(projectcss.all, sty.svg__lGhU)}
+                  role={"img"}
+                />
+              </p.PlasmicLink>
+
+              <p.PlasmicLink
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__wkn9
+                )}
+                component={Link}
+                href={"https://twitter.com/MDoAeschlimann" as const}
+                platform={"nextjs"}
+                target={"_blank" as const}
+              >
+                <TwitterIcon
+                  className={classNames(projectcss.all, sty.svg__xZs2P)}
+                  role={"img"}
+                />
+              </p.PlasmicLink>
+
+              <p.PlasmicLink
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__uPo26
+                )}
+                component={Link}
+                href={
+                  "https://www.linkedin.com/in/marie-do-aeschlimann-36a4b576" as const
+                }
+                platform={"nextjs"}
+                target={"_blank" as const}
+              >
+                <LinkedinIcon
+                  className={classNames(projectcss.all, sty.svg__esj3)}
+                  role={"img"}
+                />
+              </p.PlasmicLink>
+            </p.Stack>
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__frSaa
+              )}
+            >
+              {"Me contacter : "}
             </div>
 
             <p.Stack
@@ -753,65 +840,11 @@ function PlasmicAccueil__RenderFunc(props: {
                   sty.link__vfRrI
                 )}
                 component={Link}
-                href={"https://facebook.com/mariedo.aeschlimann" as const}
+                href={"/contact" as const}
                 platform={"nextjs"}
-                target={"_blank" as const}
               >
-                <FacebookIcon
+                <MailRoundSvgrepoComsvgIcon
                   className={classNames(projectcss.all, sty.svg__swCyq)}
-                  role={"img"}
-                />
-              </p.PlasmicLink>
-
-              <p.PlasmicLink
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  sty.link__ya6Fi
-                )}
-                component={Link}
-                href={"https://www.instagram.com/mariedoaeschlimann" as const}
-                platform={"nextjs"}
-                target={"_blank" as const}
-              >
-                <InstagramIcon
-                  className={classNames(projectcss.all, sty.svg__miXy0)}
-                  role={"img"}
-                />
-              </p.PlasmicLink>
-
-              <p.PlasmicLink
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  sty.link___5QWeH
-                )}
-                component={Link}
-                href={"https://twitter.com/MDoAeschlimann" as const}
-                platform={"nextjs"}
-                target={"_blank" as const}
-              >
-                <TwitterIcon
-                  className={classNames(projectcss.all, sty.svg___8Uc2N)}
-                  role={"img"}
-                />
-              </p.PlasmicLink>
-
-              <p.PlasmicLink
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  sty.link__osPQ
-                )}
-                component={Link}
-                href={
-                  "https://www.linkedin.com/in/marie-do-aeschlimann-36a4b576" as const
-                }
-                platform={"nextjs"}
-                target={"_blank" as const}
-              >
-                <LinkedinIcon
-                  className={classNames(projectcss.all, sty.svg__ys5SU)}
                   role={"img"}
                 />
               </p.PlasmicLink>

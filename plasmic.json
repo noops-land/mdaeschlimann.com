@@ -161,6 +161,11 @@
           "id": "CLNhNHAXHb",
           "name": "InstagramIcon",
           "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__Instagram.tsx"
+        },
+        {
+          "id": "-NKFW0pekv",
+          "name": "MailRoundSvgrepoComsvgIcon",
+          "moduleFilePath": "plasmic/mdaeschlimann_com/icons/PlasmicIcon__MailRoundSvgrepoComsvg.tsx"
         }
       ],
       "images": [
