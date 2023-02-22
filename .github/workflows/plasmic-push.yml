@@ -1,26 +1,15 @@
-name: Deploy Plasmic app
-
-permissions:
-  contents: write
-  pages: write
-  pull-requests: write
+name: Build and deploy Plasmic app
 
 on:
-  repository_dispatch:
-    types: [plasmic]
+  push:
+    branches:
+      - main
 
 jobs:
   job:
     name: Build and deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for plasmic sync to succeed
-        uses: lewagon/wait-on-check-action@v1.3.1
-        with:
-          ref: main
-          check-name: 'Sync, build and deploy'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
       - id: checkout
         name: Check out repository
         uses: actions/checkout@v2
@@ -28,26 +17,23 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
       - id: node
-        name: Setting up node v18...
-        uses: actions/setup-node@v3
+        name: Set up node v16
+        uses: actions/setup-node@v2
         with:
-          node-version: "18"
+          node-version: '16'
       - id: cache
         name: Recover cache
         uses: actions/cache@v2
         with:
           key: lock-${{ hashFiles('package-lock.json', 'yarn.lock') }}
           path: node_modules
-        # make sure we are on the latest changelog
-      - run: git pull
       - id: build
         name: Build Plasmic app
         uses: plasmicapp/plasmic-action@master
         with:
           run: build
           branch: main
-          directory: ${{ github.event.client_payload.data.directory }}
-          platform: ${{ github.event.client_payload.data.platform }}
+          skip_if_plasmic: true
       - id: gh-pages
         name: Publish to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.0
