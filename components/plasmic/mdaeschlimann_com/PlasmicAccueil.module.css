@@ -454,7 +454,7 @@
     flex-shrink: 0;
   }
 }
-.text__frSaa {
+.link__frSaa {
   position: relative;
   width: auto;
   height: auto;
@@ -464,7 +464,7 @@
   margin-left: 40px;
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .text__frSaa {
+  .link__frSaa {
     font-size: 10px;
     margin-left: 10px;
   }

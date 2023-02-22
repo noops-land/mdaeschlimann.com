@@ -826,15 +826,19 @@ function PlasmicAccueil__RenderFunc(props: {
               </p.PlasmicLink>
             </p.Stack>
 
-            <div
+            <p.PlasmicLink
               className={classNames(
                 projectcss.all,
+                projectcss.a,
                 projectcss.__wab_text,
-                sty.text__frSaa
+                sty.link__frSaa
               )}
+              component={Link}
+              href={"/contact" as const}
+              platform={"nextjs"}
             >
               {"Me contacter : "}
-            </div>
+            </p.PlasmicLink>
 
             <p.Stack
               as={"div"}
