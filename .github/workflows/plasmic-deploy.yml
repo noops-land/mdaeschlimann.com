@@ -27,7 +27,8 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-          ref: main
+      # make sure we are on the latest changelog
+      - run: git pull
       - id: node
         name: Setting up node v18...
         uses: actions/setup-node@v3
