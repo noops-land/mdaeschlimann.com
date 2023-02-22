@@ -34,6 +34,10 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import TextInput from "../../TextInput"; // plasmic-import: JUigd8V3ygI/component
+import TextArea from "../../TextArea"; // plasmic-import: WhXOwNbmQut/component
+import Checkbox from "../../Checkbox"; // plasmic-import: W-4lJh8DJRw/component
+import Button from "../../Button"; // plasmic-import: a1_SE8wfWDQ/component
 import Form from "../../Form"; // plasmic-import: T0fwWsOABjK/component
 
 import { useScreenVariants as useScreenVariants_84TpjeQmcocO } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: 8_4TpjeQmcocO/globalVariant
@@ -45,6 +49,7 @@ import sty from "./PlasmicAccueil.module.css"; // plasmic-import: SRL_deXEpapHr/
 
 import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: 8Kq5biUcOP2KT1/icon
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: a6P6rGXfRam2Qq/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: 7GBqP4yc8GG/icon
 import FacebookIcon from "./icons/PlasmicIcon__Facebook"; // plasmic-import: bS4_04WE0n/icon
 import InstagramIcon from "./icons/PlasmicIcon__Instagram"; // plasmic-import: CLNhNHAXHb/icon
 import TwitterIcon from "./icons/PlasmicIcon__Twitter"; // plasmic-import: xNSgQQVONs/icon
@@ -53,15 +58,18 @@ import LinkedinIcon from "./icons/PlasmicIcon__Linkedin"; // plasmic-import: R0S
 export type PlasmicAccueil__VariantMembers = {
   merci: "merci";
   mentions: "mentions";
+  contact: "contact";
 };
 export type PlasmicAccueil__VariantsArgs = {
   merci?: SingleBooleanChoiceArg<"merci">;
   mentions?: SingleBooleanChoiceArg<"mentions">;
+  contact?: SingleBooleanChoiceArg<"contact">;
 };
 type VariantPropType = keyof PlasmicAccueil__VariantsArgs;
 export const PlasmicAccueil__VariantProps = new Array<VariantPropType>(
   "merci",
-  "mentions"
+  "mentions",
+  "contact"
 );
 
 export type PlasmicAccueil__ArgsType = {};
@@ -71,8 +79,14 @@ export const PlasmicAccueil__ArgProps = new Array<ArgPropType>();
 export type PlasmicAccueil__OverridesType = {
   root?: p.Flex<"div">;
   img?: p.Flex<typeof p.PlasmicImg>;
+  prenom?: p.Flex<typeof TextInput>;
+  nom?: p.Flex<typeof TextInput>;
+  email?: p.Flex<typeof TextInput>;
+  sujet?: p.Flex<typeof TextInput>;
+  message?: p.Flex<typeof TextArea>;
+  checkbox?: p.Flex<typeof Checkbox>;
+  button?: p.Flex<typeof Button>;
   h2?: p.Flex<"h2">;
-  form?: p.Flex<typeof Form>;
   ul?: p.Flex<"ul">;
 };
 
@@ -120,6 +134,12 @@ function PlasmicAccueil__RenderFunc(props: {
         type: "private",
         variableType: "variant",
         initFunc: true ? ($props, $state, $ctx) => $props.mentions : undefined
+      },
+      {
+        path: "contact",
+        type: "private",
+        variableType: "variant",
+        initFunc: true ? ($props, $state, $ctx) => $props.contact : undefined
       }
     ],
     [$props, $ctx]
@@ -197,6 +217,7 @@ function PlasmicAccueil__RenderFunc(props: {
             projectcss.plasmic_tokens,
             sty.root,
             {
+              [sty.rootcontact]: hasVariant($state, "contact", "contact"),
               [sty.rootmentions]: hasVariant($state, "mentions", "mentions"),
               [sty.rootmerci]: hasVariant($state, "merci", "merci")
             }
@@ -247,6 +268,11 @@ function PlasmicAccueil__RenderFunc(props: {
 
           <div
             className={classNames(projectcss.all, sty.freeBox__wzPnx, {
+              [sty.freeBoxcontact__wzPnxJyCfV]: hasVariant(
+                $state,
+                "contact",
+                "contact"
+              ),
               [sty.freeBoxmentions__wzPnxnW20P]: hasVariant(
                 $state,
                 "mentions",
@@ -266,6 +292,11 @@ function PlasmicAccueil__RenderFunc(props: {
                   projectcss.__wab_text,
                   sty.text__oPb7,
                   {
+                    [sty.textcontact__oPb7JyCfV]: hasVariant(
+                      $state,
+                      "contact",
+                      "contact"
+                    ),
                     [sty.textmentions__oPb7NW20P]: hasVariant(
                       $state,
                       "mentions",
@@ -284,6 +315,11 @@ function PlasmicAccueil__RenderFunc(props: {
                         projectcss.__wab_text,
                         sty.h1__nwUqy,
                         {
+                          [sty.h1contact__nwUqyJyCfV]: hasVariant(
+                            $state,
+                            "contact",
+                            "contact"
+                          ),
                           [sty.h1merci__nwUqynshOl]: hasVariant(
                             $state,
                             "merci",
@@ -292,7 +328,9 @@ function PlasmicAccueil__RenderFunc(props: {
                         }
                       )}
                     >
-                      {hasVariant($state, "merci", "merci")
+                      {hasVariant($state, "contact", "contact")
+                        ? "Me contacter"
+                        : hasVariant($state, "merci", "merci")
                         ? "Merci !"
                         : "Inscrivez-vous à ma newsletter\npour rester informé(e) :"}
                     </h1>
@@ -300,6 +338,135 @@ function PlasmicAccueil__RenderFunc(props: {
                   <React.Fragment>{""}</React.Fragment>
                 </React.Fragment>
               </div>
+            ) : null}
+            {(hasVariant($state, "contact", "contact") ? true : false) ? (
+              <p.Stack
+                as={"form"}
+                hasGap={true}
+                action={"https://mda.cloudcall.fr/webhook/contact" as const}
+                className={classNames(projectcss.all, sty.form__s9T, {
+                  [sty.formcontact__s9TJyCfV]: hasVariant(
+                    $state,
+                    "contact",
+                    "contact"
+                  )
+                })}
+                method={"post" as const}
+              >
+                <TextInput
+                  data-plasmic-name={"prenom"}
+                  data-plasmic-override={overrides.prenom}
+                  className={classNames("__wab_instance", sty.prenom)}
+                  hover={"Veuillez indiquer votre prénom (requis)" as const}
+                  name={"prenom" as const}
+                  placeholder={"Prénom*" as const}
+                  required={true}
+                />
+
+                <TextInput
+                  data-plasmic-name={"nom"}
+                  data-plasmic-override={overrides.nom}
+                  className={classNames("__wab_instance", sty.nom)}
+                  hover={"Veuillez indiquer votre nom (requis)" as const}
+                  name={"nom" as const}
+                  placeholder={"Nom*" as const}
+                  required={true}
+                />
+
+                <TextInput
+                  data-plasmic-name={"email"}
+                  data-plasmic-override={overrides.email}
+                  className={classNames("__wab_instance", sty.email)}
+                  hover={
+                    "Veuillez indiquer votre adresse email (requis)" as const
+                  }
+                  name={"email" as const}
+                  placeholder={"Email*" as const}
+                  required={true}
+                  type={"email" as const}
+                />
+
+                <TextInput
+                  data-plasmic-name={"sujet"}
+                  data-plasmic-override={overrides.sujet}
+                  className={classNames("__wab_instance", sty.sujet, {
+                    [sty.sujetcontact]: hasVariant($state, "contact", "contact")
+                  })}
+                  hover={
+                    "Veuillez indiquer le sujet dont vous souhaitez me faire part (requis)" as const
+                  }
+                  name={"sujet" as const}
+                  placeholder={"Sujet du message*" as const}
+                  required={true}
+                  type={"text" as const}
+                />
+
+                <TextArea
+                  data-plasmic-name={"message"}
+                  data-plasmic-override={overrides.message}
+                  className={classNames("__wab_instance", sty.message, {
+                    [sty.messagecontact]: hasVariant(
+                      $state,
+                      "contact",
+                      "contact"
+                    )
+                  })}
+                  hover={
+                    "Veuillez entrer le message dont vous souhaitez me faire part (requis)" as const
+                  }
+                  name={"message" as const}
+                  placeholder={"Votre message*" as const}
+                  required={true}
+                  rows={5 as const}
+                />
+
+                <Checkbox
+                  data-plasmic-name={"checkbox"}
+                  data-plasmic-override={overrides.checkbox}
+                  className={classNames("__wab_instance", sty.checkbox)}
+                  name={"checked" as const}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__vpO9
+                    )}
+                  >
+                    <React.Fragment>
+                      <React.Fragment>
+                        {"Je confirme avoir pris connaissance de vos "}
+                      </React.Fragment>
+                      {
+                        <p.PlasmicLink
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            projectcss.plasmic_default__inline,
+                            sty.link__eGiv2
+                          )}
+                          component={Link}
+                          href={"/mentions-legales" as const}
+                          platform={"nextjs"}
+                          target={"_blank" as const}
+                        >
+                          {"mentions légales et politique de confidentialité"}
+                        </p.PlasmicLink>
+                      }
+                      <React.Fragment>{"."}</React.Fragment>
+                    </React.Fragment>
+                  </div>
+                </Checkbox>
+
+                <Button
+                  data-plasmic-name={"button"}
+                  data-plasmic-override={overrides.button}
+                  className={classNames("__wab_instance", sty.button)}
+                >
+                  {"Valider"}
+                </Button>
+              </p.Stack>
             ) : null}
             {(
               hasVariant($state, "mentions", "mentions")
@@ -351,22 +518,31 @@ function PlasmicAccueil__RenderFunc(props: {
               </div>
             ) : null}
             {(
-              hasVariant($state, "mentions", "mentions")
+              hasVariant($state, "contact", "contact")
+                ? false
+                : hasVariant($state, "mentions", "mentions")
                 ? false
                 : hasVariant($state, "merci", "merci")
                 ? false
                 : true
             ) ? (
               <Form
-                data-plasmic-name={"form"}
-                data-plasmic-override={overrides.form}
-                className={classNames("__wab_instance", sty.form, {
-                  [sty.formmentions]: hasVariant(
+                className={classNames("__wab_instance", sty.form___9TpRj, {
+                  [sty.formcontact___9TpRjJyCfV]: hasVariant(
+                    $state,
+                    "contact",
+                    "contact"
+                  ),
+                  [sty.formmentions___9TpRJnW20P]: hasVariant(
                     $state,
                     "mentions",
                     "mentions"
                   ),
-                  [sty.formmerci]: hasVariant($state, "merci", "merci")
+                  [sty.formmerci___9TpRjnshOl]: hasVariant(
+                    $state,
+                    "merci",
+                    "merci"
+                  )
                 })}
               />
             ) : null}
@@ -648,10 +824,28 @@ function PlasmicAccueil__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "img", "h2", "form", "ul"],
+  root: [
+    "root",
+    "img",
+    "prenom",
+    "nom",
+    "email",
+    "sujet",
+    "message",
+    "checkbox",
+    "button",
+    "h2",
+    "ul"
+  ],
   img: ["img"],
+  prenom: ["prenom"],
+  nom: ["nom"],
+  email: ["email"],
+  sujet: ["sujet"],
+  message: ["message"],
+  checkbox: ["checkbox"],
+  button: ["button"],
   h2: ["h2"],
-  form: ["form"],
   ul: ["ul"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -660,8 +854,14 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   img: typeof p.PlasmicImg;
+  prenom: typeof TextInput;
+  nom: typeof TextInput;
+  email: typeof TextInput;
+  sujet: typeof TextInput;
+  message: typeof TextArea;
+  checkbox: typeof Checkbox;
+  button: typeof Button;
   h2: "h2";
-  form: typeof Form;
   ul: "ul";
 };
 
@@ -727,8 +927,14 @@ export const PlasmicAccueil = Object.assign(
   {
     // Helper components rendering sub-elements
     img: makeNodeComponent("img"),
+    prenom: makeNodeComponent("prenom"),
+    nom: makeNodeComponent("nom"),
+    email: makeNodeComponent("email"),
+    sujet: makeNodeComponent("sujet"),
+    message: makeNodeComponent("message"),
+    checkbox: makeNodeComponent("checkbox"),
+    button: makeNodeComponent("button"),
     h2: makeNodeComponent("h2"),
-    form: makeNodeComponent("form"),
     ul: makeNodeComponent("ul"),
 
     // Metadata about props expected for PlasmicAccueil

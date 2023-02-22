@@ -95,6 +95,20 @@
           "cssFilePath": "plasmic/mdaeschlimann_com/PlasmicForm.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "WhXOwNbmQut",
+          "name": "TextArea",
+          "type": "managed",
+          "projectId": "p4LaNHsjacaypvn2fBdVp1",
+          "renderModuleFilePath": "plasmic/mdaeschlimann_com/PlasmicTextArea.tsx",
+          "importSpec": {
+            "modulePath": "TextArea.tsx"
+          },
+          "cssFilePath": "plasmic/mdaeschlimann_com/PlasmicTextArea.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "text-input"
         }
       ],
       "icons": [
@@ -154,11 +168,6 @@
           "id": "eD1c1Eyb0",
           "name": "marie-do_aeschlimann_action",
           "filePath": "../public/plasmic/mdaeschlimann_com/images/marieDoAeschlimannAction.jpeg"
-        },
-        {
-          "id": "7Q3Z0uWVW",
-          "name": "marie-do_aeschlimann",
-          "filePath": "../public/plasmic/mdaeschlimann_com/images/marieDoAeschlimann.jpeg"
         }
       ],
       "indirect": false,
