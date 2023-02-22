@@ -253,6 +253,7 @@ function PlasmicAccueil__RenderFunc(props: {
                 "Marie-Do Aeschlimann, Vice-Présidente de la Région Île-de-France, Adjointe au Maire d'Asnières-sur-Seine, Mon action pour Asnières et l'Île-de-France" as const
               }
               className={classNames(sty.img, {
+                [sty.imgmentions]: hasVariant($state, "mentions", "mentions"),
                 [sty.imgmerci]: hasVariant($state, "merci", "merci")
               })}
               displayHeight={"auto" as const}
@@ -352,7 +353,7 @@ function PlasmicAccueil__RenderFunc(props: {
               <p.Stack
                 as={"form"}
                 hasGap={true}
-                action={"https://mda.cloudcall.fr/webhook/contact" as const}
+                action={"https://mda.cloudcall.fr/webhook/contact22" as const}
                 className={classNames(projectcss.all, sty.form__s9T, {
                   [sty.formcontact__s9TJyCfV]: hasVariant(
                     $state,
@@ -427,6 +428,7 @@ function PlasmicAccueil__RenderFunc(props: {
                   placeholder={"Votre message*" as const}
                   required={true}
                   rows={3 as const}
+                  type={"text" as const}
                 />
 
                 <Checkbox
