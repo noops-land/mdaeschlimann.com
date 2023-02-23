@@ -665,7 +665,28 @@ function PlasmicAccueil__RenderFunc(props: {
                   }
                   <React.Fragment>
                     {
-                      "En vertu de la loi n° 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés (dite \"loi CNIL\"), vos coordonnées ne seront en aucun cas utilisées à d'autres fins ou divulguées à un tiers à l’exception des co-contractants de Mme Marie-Do Aeschlimann qui n’agiront que sur instruction et contrôle de celle-ci et qui seront soumis à une stricte obligation de confidentialité.\n\nConformément à l'article 38 de la loi CNIL, vous pouvez vous opposer à ce que vos données à caractère personnel fassent l'objet d'un traitement. Pour ce faire, il vous suffit de vous désabonner à la newsletter de Mme Marie-Do Aeschlimann en cliquant sur \"se désinscrire\". Vous serez alors immédiatement désinscrit de la liste de diffusion et vos coordonnées seront définitivement effacées de notre traitement.\n\nConformément aux articles 39 et 40 de la loi CNIL, vous disposez à tout moment d'un droit d'information, d'accès, de modification, de rectification et de suppression des données qui vous concernent. Pour l'exercer, il vous suffit d'adresser un message à contact@mdaeschlimann.com.\n\nNous utilisons Sendinblue en tant que plateforme marketing. En soumettant le formulaire d'inscription à la newsletter de Marie-Do Aeschlmann, vous reconnaissez que les informations que vous allez fournir seront transmises à Sendinblue en sa qualité de processeur de données; et ce conformément à "
+                      "En vertu de la loi n° 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés (dite \"loi CNIL\"), vos coordonnées ne seront en aucun cas utilisées à d'autres fins ou divulguées à un tiers à l’exception des co-contractants de Mme Marie-Do Aeschlimann qui n’agiront que sur instruction et contrôle de celle-ci et qui seront soumis à une stricte obligation de confidentialité.\n\nConformément à l'article 38 de la loi CNIL, vous pouvez vous opposer à ce que vos données à caractère personnel fassent l'objet d'un traitement. Pour ce faire, il vous suffit de vous désabonner à la newsletter de Mme Marie-Do Aeschlimann en cliquant sur \"se désinscrire\". Vous serez alors immédiatement désinscrit de la liste de diffusion et vos coordonnées seront définitivement effacées de notre traitement.\n\nConformément aux articles 39 et 40 de la loi CNIL, vous disposez à tout moment d'un droit d'information, d'accès, de modification, de rectification et de suppression des données qui vous concernent. Pour l'exercer, il vous suffit d'adresser un message "
+                    }
+                  </React.Fragment>
+                  {
+                    <p.PlasmicLink
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__ciBrK
+                      )}
+                      component={Link}
+                      href={"/contact" as const}
+                      platform={"nextjs"}
+                    >
+                      {"via ce formulaire de contact"}
+                    </p.PlasmicLink>
+                  }
+                  <React.Fragment>
+                    {
+                      ".\n\nNous utilisons Sendinblue en tant que plateforme marketing. En soumettant le formulaire d'inscription à la newsletter de Marie-Do Aeschlmann, vous reconnaissez que les informations que vous allez fournir seront transmises à Sendinblue en sa qualité de processeur de données; et ce conformément à "
                     }
                   </React.Fragment>
                   {
