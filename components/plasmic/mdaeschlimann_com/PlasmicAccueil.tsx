@@ -460,7 +460,6 @@ function PlasmicAccueil__RenderFunc(props: {
                           component={Link}
                           href={"/mentions-legales" as const}
                           platform={"nextjs"}
-                          target={"_blank" as const}
                         >
                           {"mentions légales et politique de confidentialité"}
                         </p.PlasmicLink>
@@ -833,12 +832,18 @@ function PlasmicAccueil__RenderFunc(props: {
                 projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
-                sty.link__frSaa
+                sty.link__frSaa,
+                {
+                  [sty.linkcontact__frSaaJyCfV]: hasVariant(
+                    $state,
+                    "contact",
+                    "contact"
+                  )
+                }
               )}
               component={Link}
               href={"/contact" as const}
               platform={"nextjs"}
-              target={"_blank" as const}
             >
               {"Me contacter : "}
             </p.PlasmicLink>
@@ -857,7 +862,6 @@ function PlasmicAccueil__RenderFunc(props: {
                 component={Link}
                 href={"/contact" as const}
                 platform={"nextjs"}
-                target={"_blank" as const}
               >
                 <ContactIcon
                   className={classNames(projectcss.all, sty.svg__swCyq)}
