@@ -10,9 +10,8 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
-    "@plasmicapp/cli": "^0.1.214",
-    "@plasmicapp/host": "^1.0.106",
-    "@plasmicapp/react-web": "^0.2.158",
+    "@plasmicapp/host": "^1.0.107",
+    "@plasmicapp/react-web": "^0.2.159",
     "@types/node": "18.14.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
@@ -23,5 +22,8 @@
     "react-dom": "18.2.0",
     "react-phone-number-input": "^3.2.19",
     "typescript": "4.9.5"
+  },
+  "devDependencies": {
+    "@plasmicapp/cli": "^0.1.214"
   }
 }
