@@ -14,6 +14,7 @@ import * as React from "react";
 
 import Head from "next/head";
 import Link, { LinkProps } from "next/link";
+import { useRouter } from "next/router";
 
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/host";
@@ -109,6 +110,7 @@ function PlasmicAccueil__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
+  const __nextRouter = useRouter();
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
@@ -269,8 +271,8 @@ function PlasmicAccueil__RenderFunc(props: {
               loading={"eager" as const}
               src={{
                 src: "/plasmic/mdaeschlimann_com/images/marieDoAeschlimann.jpeg",
-                fullWidth: 4167,
-                fullHeight: 2500,
+                fullWidth: 1728,
+                fullHeight: 1037,
                 aspectRatio: undefined
               }}
             />
@@ -1022,7 +1024,7 @@ export const PlasmicAccueil = Object.assign(
       description:
         "Vice-Présidente de la Région Île-de-France, Adjointe au Maire d'Asnières-sur-Seine",
       ogImageSrc:
-        "https://site-assets.plasmic.app/4d1e01689ca77c10adf564790dbd0cd9.jpg",
+        "https://site-assets.plasmic.app/d17298f932fc6d71948114eddacb7ff1.jpg",
       canonical: "https://mdaeschlimann.com"
     }
   }
