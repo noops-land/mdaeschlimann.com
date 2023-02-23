@@ -27,7 +27,7 @@ function Contact() {
               }
               if (!checked) {
                 event.preventDefault();
-                alert("Veuillez confirmer que vous souhaitez recevoir la newsletter en cochant la case prévue à cet effet.")
+                alert("Veuillez cocher la case de confirmation.")
               }
             }
           }
