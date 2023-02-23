@@ -283,7 +283,6 @@ function PlasmicForm__RenderFunc(props: {
                   component={Link}
                   href={"/mentions-legales" as const}
                   platform={"nextjs"}
-                  target={"_blank" as const}
                 >
                   {"mentions légales et politique de confidentialité"}
                 </p.PlasmicLink>
