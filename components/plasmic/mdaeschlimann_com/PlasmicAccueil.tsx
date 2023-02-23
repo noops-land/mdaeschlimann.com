@@ -230,6 +230,11 @@ function PlasmicAccueil__RenderFunc(props: {
               projectcss.a,
               sty.link__okzgc,
               {
+                [sty.linkcontact__okzgcJyCfV]: hasVariant(
+                  $state,
+                  "contact",
+                  "contact"
+                ),
                 [sty.linkmentions__okzgcnW20P]: hasVariant(
                   $state,
                   "mentions",
@@ -838,14 +843,29 @@ function PlasmicAccueil__RenderFunc(props: {
                     $state,
                     "contact",
                     "contact"
+                  ),
+                  [sty.linkmentions__frSaAnW20P]: hasVariant(
+                    $state,
+                    "mentions",
+                    "mentions"
                   )
                 }
               )}
               component={Link}
-              href={"/contact" as const}
+              href={
+                hasVariant($state, "contact", "contact")
+                  ? `/`
+                  : hasVariant($state, "mentions", "mentions")
+                  ? `/`
+                  : ("/contact" as const)
+              }
               platform={"nextjs"}
             >
-              {"Me contacter : "}
+              {hasVariant($state, "contact", "contact")
+                ? "Ma newsletter : "
+                : hasVariant($state, "mentions", "mentions")
+                ? "Ma newsletter : "
+                : "Me contacter : "}
             </p.PlasmicLink>
 
             <p.Stack
@@ -857,14 +877,43 @@ function PlasmicAccueil__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.a,
-                  sty.link__vfRrI
+                  sty.link__vfRrI,
+                  {
+                    [sty.linkcontact__vfRrIJyCfV]: hasVariant(
+                      $state,
+                      "contact",
+                      "contact"
+                    ),
+                    [sty.linkmentions__vfRrInW20P]: hasVariant(
+                      $state,
+                      "mentions",
+                      "mentions"
+                    )
+                  }
                 )}
                 component={Link}
-                href={"/contact" as const}
+                href={
+                  hasVariant($state, "contact", "contact")
+                    ? `/`
+                    : hasVariant($state, "mentions", "mentions")
+                    ? `/`
+                    : ("/contact" as const)
+                }
                 platform={"nextjs"}
               >
                 <ContactIcon
-                  className={classNames(projectcss.all, sty.svg__swCyq)}
+                  className={classNames(projectcss.all, sty.svg__swCyq, {
+                    [sty.svgcontact__swCyqJyCfV]: hasVariant(
+                      $state,
+                      "contact",
+                      "contact"
+                    ),
+                    [sty.svgmentions__swCyqnW20P]: hasVariant(
+                      $state,
+                      "mentions",
+                      "mentions"
+                    )
+                  })}
                   role={"img"}
                 />
               </p.PlasmicLink>
